@@ -10,6 +10,7 @@ function AllArticlesPage(){
     const [topic, setTopic] = useState("");
 
     useEffect(() => {
+        console.log("Fetching articles with:", `sortBy=${sortBy}`, `topic=${topic}`);
         setIsLoading(true)
         fetchArticles(sortBy, topic)
         .then((data) => {
