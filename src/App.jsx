@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/articles" element={<AllArticlesPage />} />
+          <Route path="/articles/:article_id" element={SingleArticlePage />} />
         </Routes>
       </div>
   )
