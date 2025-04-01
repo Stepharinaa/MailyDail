@@ -39,6 +39,16 @@ const fetchCommentsByArticleID = (article_id) => {
     });
 };
 
+const postCommentByArticleID = (article_id) => {
+  return api
+    .post(`/articles/${article_id}/comments`)
+    .then(({ data }) => data.comment)
+    .catch((error) => {
+      console.error("Error posting comment:", error);
+      throw error;
+    });
+};
+
 const fetchTop5Articles = () => {
   return api
     .get("/articles?sort_by=votes&order=DESC&limit=5&page=1")
@@ -63,6 +73,7 @@ export {
   fetchArticles,
   fetchSingleArticle,
   fetchCommentsByArticleID,
+  postCommentByArticleID,
   fetchTop5Articles,
   fetchTopics,
 };
