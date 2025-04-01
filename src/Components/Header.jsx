@@ -11,7 +11,7 @@ function Header() {
       <Link to="/"><img className="logo" src={logo} alt="NC News Logo"/></Link>
       <h1 className="site-title">Maily Dail</h1>
       </div>
-      <nav>
+      <nav className="navigation-links">
       <Link to="/articles" onClick={handleClick}>
         Articles
       </Link>
