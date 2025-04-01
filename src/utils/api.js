@@ -29,6 +29,16 @@ const fetchSingleArticle = (article_id) => {
     });
 };
 
+const fetchCommentsByArticleID = (article_id) => {
+  return api
+    .get(`/articles/${article_id}/comments`)
+    .then(({ data }) => data.comments)
+    .catch((error) => {
+      console.error("Error fetching comments:", error);
+      throw error;
+    });
+};
+
 const fetchTop5Articles = () => {
   return api
     .get("/articles?sort_by=votes&order=DESC&limit=5&page=1")
@@ -49,4 +59,10 @@ const fetchTopics = () => {
     });
 };
 
-export { fetchArticles, fetchSingleArticle, fetchTop5Articles, fetchTopics };
+export {
+  fetchArticles,
+  fetchSingleArticle,
+  fetchCommentsByArticleID,
+  fetchTop5Articles,
+  fetchTopics,
+};
