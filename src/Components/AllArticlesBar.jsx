@@ -1,6 +1,6 @@
 import { useState} from 'react'
 
-function AllArticlesSearchBar({ onSortChange, onTopicChange, topics}) {
+function AllArticlesBar({ onSortChange, onTopicChange, topics}) {
     const [sortBy, setSortBy] = useState("created_at")
     const [topic, setTopic] = useState("")
 
@@ -38,4 +38,4 @@ function AllArticlesSearchBar({ onSortChange, onTopicChange, topics}) {
       );
 } 
 
-export default AllArticlesSearchBar;
+export default AllArticlesBar;
