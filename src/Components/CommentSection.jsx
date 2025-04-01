@@ -21,6 +21,7 @@ function CommentSection({articleID}) {
 
     const handleCommentSubmit = (event) => {
         event.preventDefault()
+        if (!newComment.trim()) return;
 
         setIsPosting(true)
         postCommentByArticleID(articleID, { username: "grumpy19", body: newComment})
