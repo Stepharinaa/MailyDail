@@ -41,7 +41,7 @@ function SingleArticlePage() {
           <span className="comments-value">🗪 {article.comment_count} Comments</span>
         </div>
       </div>
-      <CommentSection/>
+      <CommentSection articleId={article_id}/>
         </article>
       );
     }
