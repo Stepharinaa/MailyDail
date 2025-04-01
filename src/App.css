@@ -57,6 +57,17 @@
   border-radius: 8px;
 }
 
+.article-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black; 
+  text-decoration: none; 
+}
+
+.article-title:hover {
+  text-decoration: underline;
+}
+
 .article-content {
   padding: 16px;
   display: flex;
@@ -71,6 +82,12 @@
   gap: 12px; 
   margin-top: 10px;
   flex-wrap: wrap;
+}
+
+.article-meta {
+  font-size: 1.5rem;
+  color: black; 
+  text-decoration: none; 
 }
 
 .article-footer {
@@ -96,9 +113,30 @@
 
 .votes-value,
 .comments-value {
-  font-size: 1rem;
+  font-size: 1.25rem;
+  color: white
 }
 
 .card {
   padding: 2em;
+}
+
+.welcome-message {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.welcome-message h1 {
+  color: #333;
+  font-size: 2rem;
+}
+
+.welcome-message p {
+  color: #555;
+  font-size: 1.2rem;
 }

@@ -1,7 +1,7 @@
 :root {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 500;
 
   color: #213547;
   background-color: #ffffff;
@@ -22,7 +22,7 @@ body {
 
 a {
   font-weight: 500;
-  color: #0073e6;
+  color: #0d0f11;
   text-decoration: none;
 }
 
@@ -54,7 +54,7 @@ button:focus-visible {
   outline: 2px auto #0073e6;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     color: #ffffff;
     background-color: #242424;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import ArticleList from '../Components/ArticleList'
 import { fetchArticles } from '../utils/api'
+import WelcomeMessage from '../Components/WelcomeMessage'
 
 function HomePage(){
     const [articles, setArticles] = useState([])
@@ -22,6 +23,7 @@ function HomePage(){
 return (
     <main>
         <h1>All Articles</h1>
+        <WelcomeMessage/>
         {isLoading ? <p>Loading articles...</p> : <ArticleList articles={articles} />}
     </main>
 );
