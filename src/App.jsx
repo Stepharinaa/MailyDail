@@ -3,7 +3,7 @@ import HomePage from "./Pages/HomePage";
 import Header from "./Components/Header";
 import "./App.css"
 
-// import AllArticlesPage from "./Pages/AllArticlesPage"
+import AllArticlesPage from "./Pages/AllArticlesPage"
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          {/* <Route path="/articles" element={<AllArticlesPage />} /> */}
+          <Route path="/articles" element={<AllArticlesPage />} />
         </Routes>
       </div>
   )
