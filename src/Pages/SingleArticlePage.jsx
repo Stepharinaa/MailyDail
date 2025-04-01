@@ -26,12 +26,20 @@ function SingleArticlePage() {
 
       return (
         <article className="single-article">
-          <h1>{article.title}</h1>
-          <span>Posted: {new Date(article.created_at).toLocaleDateString()}</span>
+          <h1 className="article-header">{article.title}</h1>
           <p>Written by: {article.author}</p>
-          <img src={article.article_img_url} alt={article.title} className="article-img" />
-          <p>{article.body}</p>
-          <p>Votes: {article.votes} | Comments: {article.comment_count}</p>
+          <img className="article-img" src={article.article_img_url} alt={article.title}/>
+          <p>Posted: {new Date(article.created_at).toLocaleDateString()}</p>
+          <p className="article-body">{article.body}</p>
+
+        <div className="article-stats">
+        <div className="votes-box">
+          <span className="votes-value">👍 {article.votes}</span>
+          </div>
+          <div className="comments-box">
+          <span className="comments-value">🗪 {article.comment_count} Comments</span>
+        </div>
+      </div>
         </article>
       );
     }
