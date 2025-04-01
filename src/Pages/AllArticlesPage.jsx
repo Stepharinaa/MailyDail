@@ -26,7 +26,7 @@ function AllArticlesPage(){
 return (
     <main>
         <h1>All Articles</h1>
-        <AllArticlesBar onSortChange={setSortBy} onTopicChange={setTopic} topics={[{ slug: "coding" }, { slug: "cooking" }, { slug: "football" }]} />
+        <AllArticlesBar setSortBy={setSortBy} setTopic={setTopic} />
         {isLoading ? <p>Loading articles...</p> : <ArticleList articles={articles} />}
     </main>
 );
