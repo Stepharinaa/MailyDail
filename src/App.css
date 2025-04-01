@@ -121,6 +121,22 @@
   padding: 2em;
 }
 
+.navigation-links {
+  display: flex;
+  gap: 15px;
+}
+
+.navigation-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.navigation-links a:hover {
+  color: #007bff;
+}
+
 .welcome-message {
   text-align: center;
   padding: 20px;
