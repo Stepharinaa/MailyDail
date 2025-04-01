@@ -22,8 +22,8 @@ function HomePage(){
 
 return (
     <main>
-        <h1>All Articles</h1>
         <WelcomeMessage/>
+        <h1>All Articles</h1>
         {isLoading ? <p>Loading articles...</p> : <ArticleList articles={articles} />}
     </main>
 );
