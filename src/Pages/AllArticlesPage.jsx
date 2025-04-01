@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react'
 import ArticleList from '../Components/ArticleList'
+import AllArticlesBar from '../Components/AllArticlesBar'
 import { fetchArticles } from '../utils/api'
-import WelcomeMessage from '../Components/WelcomeMessage'
 
 function AllArticlesPage(){
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [sortBy, setSortBy] = useState("created_at");
+    const [topic, setTopic] = useState("");
 
     useEffect(() => {
-        fetchArticles()
+        fetchArticles(sortBy, topic)
         .then((data) => {
             setArticles(data)
             setIsLoading(false)
@@ -23,6 +25,7 @@ function AllArticlesPage(){
 return (
     <main>
         <h1>All Articles</h1>
+        <AllArticlesBar onSortChange={setSortBy} onTopicChange={setTopic} topics={[{ slug: "coding" }, { slug: "cooking" }, { slug: "football" }]} />
         {isLoading ? <p>Loading articles...</p> : <ArticleList articles={articles} />}
     </main>
 );
