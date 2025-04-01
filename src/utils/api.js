@@ -24,4 +24,14 @@ const fetchTop5Articles = () => {
     });
 };
 
-export { fetchArticles, fetchTop5Articles };
+const fetchTopics = () => {
+  return api
+    .get("/topics")
+    .then(({ data }) => data.topics)
+    .catch((error) => {
+      console.error("Error fetching topics:", error);
+      throw error;
+    });
+};
+
+export { fetchArticles, fetchTop5Articles, fetchTopics };
