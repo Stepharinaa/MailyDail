@@ -19,6 +19,16 @@ const fetchArticles = (sortBy = "created_at", topic = "") => {
     });
 };
 
+const fetchSingleArticle = (article_id) => {
+  return api
+    .get(`/articles/${article_id}`)
+    .then(({ data }) => data.article)
+    .catch((error) => {
+      console.error("Error fetching article:", error);
+      throw error;
+    });
+};
+
 const fetchTop5Articles = () => {
   return api
     .get("/articles?sort_by=votes&order=DESC&limit=5&page=1")
@@ -39,4 +49,4 @@ const fetchTopics = () => {
     });
 };
 
-export { fetchArticles, fetchTop5Articles, fetchTopics };
+export { fetchArticles, fetchSingleArticle, fetchTop5Articles, fetchTopics };
