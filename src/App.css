@@ -209,3 +209,10 @@
   color: #444;
   padding: 10px 0;
 }
+
+.comment-section {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #a5a5a55b;
+}
