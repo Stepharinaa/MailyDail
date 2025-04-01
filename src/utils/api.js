@@ -39,9 +39,9 @@ const fetchCommentsByArticleID = (article_id) => {
     });
 };
 
-const postCommentByArticleID = (article_id) => {
+const postCommentByArticleID = (article_id, newComment) => {
   return api
-    .post(`/articles/${article_id}/comments`)
+    .post(`/articles/${article_id}/comments`, newComment)
     .then(({ data }) => data.comment)
     .catch((error) => {
       console.error("Error posting comment:", error);

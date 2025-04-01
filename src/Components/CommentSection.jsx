@@ -1,14 +1,16 @@
-import {useState, useEffect} from "react"
+import {useState, useEffect} from "react";
+import {useParams} from "react-router-dom"
 import { fetchCommentsByArticleID, postCommentByArticleID } from "../utils/api"
 
-function CommentSection({articleID}) {
+function CommentSection() {
+  const {article_id} = useParams()
     const [comments, setComments] = useState([])
     const [newComment, setNewComment] = useState("")
     const [isLoading, setIsLoading] = useState(true)
     const [isPosting, setIsPosting] = useState(false)
 
     useEffect(() => {
-        fetchCommentsByArticleID()
+        fetchCommentsByArticleID(article_id)
         .then((data) => {
             setComments(data)
             setIsLoading(false)
@@ -17,14 +19,14 @@ function CommentSection({articleID}) {
             console.error("Error fetching comments:", error)
             setIsLoading(false)
         })
-    } ,[articleID])
+    } ,[article_id])
 
     const handleCommentSubmit = (event) => {
         event.preventDefault()
         if (!newComment.trim()) return;
 
         setIsPosting(true)
-        postCommentByArticleID(articleID, { username: "grumpy19", body: newComment})
+        postCommentByArticleID(article_id, { username: "grumpy19", body: newComment})
         .then((comment) => {
             setComments((previousComments) => [comment, ...previousComments])
             setNewComment("")
@@ -55,7 +57,8 @@ return (
         {comments.length > 0 ? (
           comments.map((comment) => (
             <li key={comment.comment_id} className="comment">
-              <p>{comment.author}: {comment.body}</p>
+              <p>{comment.author}: </p>
+               <p>{comment.body}</p>
             </li>
           ))
         ) : (
