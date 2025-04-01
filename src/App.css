@@ -162,3 +162,19 @@
   color: #555;
   font-size: 1.2rem;
 }
+
+.all-articles-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.all-articles-bar select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
