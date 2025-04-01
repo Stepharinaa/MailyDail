@@ -10,6 +10,7 @@ function AllArticlesPage(){
     const [topic, setTopic] = useState("");
 
     useEffect(() => {
+        setIsLoading(true)
         fetchArticles(sortBy, topic)
         .then((data) => {
             setArticles(data)
@@ -19,7 +20,7 @@ function AllArticlesPage(){
             console.error("Error fetching articles:", error)
             setIsLoading(false)
         })
-    }, [])
+    }, [sortBy, topic])
 
 
 return (
