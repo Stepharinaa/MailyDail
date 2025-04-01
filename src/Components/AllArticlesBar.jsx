@@ -1,5 +1,5 @@
 import { useState} from 'react'
-import { fetchArticles } from '../utils/api'
+import { fetchTopics } from '../utils/api'
 
 function AllArticlesBar({ setSortBy, setTopic}) {
 const [topics, setTopics] = useState([])
