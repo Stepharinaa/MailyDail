@@ -27,7 +27,8 @@ function SingleArticlePage() {
       return (
         <article className="single-article">
           <h1>{article.title}</h1>
-          <p>By {article.author} | {new Date(article.created_at).toLocaleDateString()}</p>
+          <span>Posted: {new Date(article.created_at).toLocaleDateString()}</span>
+          <p>Written by: {article.author}</p>
           <img src={article.article_img_url} alt={article.title} className="article-img" />
           <p>{article.body}</p>
           <p>Votes: {article.votes} | Comments: {article.comment_count}</p>
