@@ -14,4 +14,14 @@ const fetchArticles = () => {
     });
 };
 
-export { fetchArticles };
+const fetchTop5Articles = () => {
+  return api
+    .get("/articles?sort_by=votes&order=DESC&limit=5&page=1")
+    .then(({ data }) => data.articles)
+    .catch((error) => {
+      console.error("Error fetching articles:", error);
+      throw error;
+    });
+};
+
+export { fetchArticles, fetchTop5Articles };
