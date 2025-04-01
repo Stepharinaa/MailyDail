@@ -216,3 +216,32 @@
   border-radius: 8px;
   background: #a5a5a55b;
 }
+
+.comment-list {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.comment {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.comment-form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment-form button {
+  padding: 12px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
