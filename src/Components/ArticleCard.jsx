@@ -3,13 +3,22 @@ import { Link } from "react-router-dom";
 function ArticleCard({ article }) {
   return (
     <article className="article-card">
-      <h2>
-        <Link to={`/articles/${article.article_id}`}>{article.title}</Link>
-      </h2>
-      <p>By {article.author}</p>
-      <p>Topic: {article.topic}</p>
-      <p>Votes: {article.votes}</p>
-      <p>Comments: {article.comment_count}</p>
+      <img src={article.article_img_url} alt={article.title} className="article-img" />
+      <div className="article-content">
+        <h2 className="article-title">
+          <Link to={`/articles/${article.article_id}`}>{article.title}</Link>
+        </h2>
+        <p className="article-meta">By {article.author} • Topic: {article.topic}</p>
+
+        <div className="article-stats">
+        <div className="votes-box">
+          <span className="votes-value">👍 {article.votes}</span>
+          </div>
+          <div className="comments-box">
+          <span className="comments-value">🗪 {article.comment_count} Comments</span>
+        </div>
+      </div>
+      </div>
     </article>
   );
 }

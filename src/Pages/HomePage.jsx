@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ArticleList } from '../Components/ArticleList'
+import ArticleList from '../Components/ArticleList'
 import { fetchArticles } from '../utils/api'
 
 function HomePage(){
