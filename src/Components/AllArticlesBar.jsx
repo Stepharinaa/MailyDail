@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import { useState, useEffect} from 'react'
 import { fetchTopics } from '../utils/api'
 
 function AllArticlesBar({ setSortBy, setTopic}) {
