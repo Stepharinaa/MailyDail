@@ -8,7 +8,8 @@ function ArticleCard({ article }) {
         <h2 className="article-title">
           <Link to={`/articles/${article.article_id}`}>{article.title}</Link>
         </h2>
-        <p className="article-meta">Author: {article.author} • Topic: {article.topic}</p>
+        <span className="article-author">Written by: {article.author}</span>
+        <p className="article-meta">Topic: {article.topic}</p>
 
         <div className="article-stats">
         <div className="votes-box">
