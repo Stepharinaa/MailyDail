@@ -3,7 +3,6 @@ import {useState, useEffect} from 'react'
 import {useParams} from "react-router-dom"
 import {fetchSingleArticle} from "../utils/api"
 import CommentSection from "../Components/CommentSection";
-import Header from "../Components/Header";
 
 function SingleArticlePage() {
     const {article_id} = useParams()
