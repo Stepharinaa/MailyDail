@@ -23,8 +23,8 @@ function ArticleVotesButton({articleID, currentVotes}) {
     return(
         <div>
             <p>Votes: {votes} </p>
-            <button onClick={() => handleVote(1)}>👍</button>
-            <button onClick={() => handleVote(-1)}>👎</button>
+            <button className="votes-box" onClick={() => handleVote(1)}>👍</button>
+            <button className="votes-box" onClick={() => handleVote(-1)}>👎</button>
         </div>
     )
 }
