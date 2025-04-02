@@ -59,6 +59,13 @@ const postCommentByArticleID = (article_id, newComment) => {
     });
 };
 
+const deleteCommentByCommentID = (comment_id) => {
+  return api.delete(`/comments/${comment_id}`).catch((error) => {
+    console.error("Error removing comment:", error);
+    throw error;
+  });
+};
+
 const fetchTop5Articles = () => {
   return api
     .get("/articles?sort_by=votes&order=DESC&limit=5&page=1")
@@ -85,6 +92,7 @@ export {
   updateVotesOnArticle,
   fetchCommentsByArticleID,
   postCommentByArticleID,
+  deleteCommentByCommentID,
   fetchTop5Articles,
   fetchTopics,
 };

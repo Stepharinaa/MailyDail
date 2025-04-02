@@ -158,6 +158,11 @@
   color: red
 }
 
+.confirmation-message {
+  font-weight: bold;
+  color: green
+}
+
 .card {
   padding: 2em;
 }
