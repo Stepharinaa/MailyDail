@@ -5,13 +5,13 @@ const api = axios.create({
 });
 
 const fetchArticles = (sortBy = "created_at", topic = "") => {
-  let url = `/articles?sort_by=${sortBy}&order=DESC`;
+  let url = sortBy ? `/articles?sort_by=${sortBy}&order=DESC` : "/articles";
   if (topic) {
     url += `&topic=${topic}`;
   }
 
   return api
-    .get("/articles")
+    .get(url)
     .then(({ data }) => data.articles)
     .catch((error) => {
       console.error("Error fetching articles:", error);

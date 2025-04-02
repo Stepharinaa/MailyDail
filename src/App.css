@@ -229,13 +229,23 @@
 }
 
 .comment-form {
+  font-size: 20px;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+#add-comment-here {
+  font-size: 20px;
+}
+
+#comment-author {
+  font-weight: bold;
+}
+
 .comment-form button {
+  font-weight: bold;
   padding: 12px 12px;
   background-color: #007bff;
   color: white;

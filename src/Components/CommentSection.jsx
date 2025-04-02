@@ -42,7 +42,7 @@ function CommentSection() {
 return (
     <section className="comment-section">
         <form onSubmit={handleCommentSubmit} className="comment-form">
-        <textarea
+        <textarea id="add-comment-here"
           value={newComment}
           onChange={(element) => setNewComment(element.target.value)}
           placeholder="Add comment here..."
@@ -52,12 +52,12 @@ return (
           {isPosting ? "Posting..." : "Add Comment"}
         </button>
         </form>
-        <h3>Comments</h3>
+        <h2>Comments</h2>
         <ul className="comment-list">
         {comments.length > 0 ? (
           comments.map((comment) => (
             <li key={comment.comment_id} className="comment">
-              <p>{comment.author}: </p>
+              <p id="comment-author">{comment.author}: </p>
                <p>{comment.body}</p>
             </li>
           ))
