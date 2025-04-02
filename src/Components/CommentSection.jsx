@@ -57,8 +57,13 @@ return (
         {comments.length > 0 ? (
           comments.map((comment) => (
             <li key={comment.comment_id} className="comment">
+              <div className="comment-header">
               <p id="comment-author">{comment.author}: </p>
+              <p id="comment-timestamp">Created At: {new Date(comment.created_at).toLocaleString()}</p>
+              </div>
                <p>{comment.body}</p>
+               <p>Votes: {comment.votes}</p>
+
             </li>
           ))
         ) : (
