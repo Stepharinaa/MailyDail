@@ -8,8 +8,11 @@ function CommentSection() {
     const [newComment, setNewComment] = useState("")
     const [isLoading, setIsLoading] = useState(true)
     const [isPosting, setIsPosting] = useState(false)
+    const [confirmationMessage, setConfirmationMessage] = useState(null)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
+      setIsLoading(true)
         fetchCommentsByArticleID(article_id)
         .then((data) => {
             setComments(data)
@@ -30,9 +33,11 @@ function CommentSection() {
         .then((comment) => {
             setComments((previousComments) => [comment, ...previousComments])
             setNewComment("")
+            setConfirmationMessage("Your message has been posted!")
         })
         .catch((error) => {
             console.error("Error posting comment", error)
+            setError("Your comment could not be posted. Please try again!")
         })
         .finally(() => {
             setIsPosting(false)
@@ -52,6 +57,8 @@ return (
           {isPosting ? "Posting..." : "Add Comment"}
         </button>
         </form>
+        {confirmationMessage && <p className="confirmation-message">{confirmationMessage}</p>}
+        {error && <p className="error-message">{error}</p>}
         <h2>Comments</h2>
         <ul className="comment-list">
         {comments.length > 0 ? (
