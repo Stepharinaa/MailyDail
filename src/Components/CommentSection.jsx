@@ -88,7 +88,7 @@ return (
             <li key={comment.comment_id} className="comment">
               <div className="comment-header">
               <p id="comment-author">{comment.author}: </p>
-              <p id="comment-timestamp">Created At: {convertToLocalTimeZone(comment.created_at)}</p>
+              <p id="comment-timestamp">Created: {convertToLocalTimeZone(comment.created_at)}</p>
               </div>
                <p>{comment.body}</p>
                <p>Votes: {comment.votes}</p>
