@@ -23,7 +23,7 @@ useEffect(() => {
           <select id="sort-by" onChange={(element) => setSortBy(element.target.value)}>
             <option value="created_at">Date</option>
             <option value="votes">Votes</option>
-            <option value="comment_count">Comments</option>
+            <option value="author">Author</option>
           </select>
     
           <label htmlFor="topic-filter">Filter by Topic:</label>
