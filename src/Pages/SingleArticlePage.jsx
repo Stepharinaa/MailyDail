@@ -33,9 +33,9 @@ function SingleArticlePage() {
           <p className="article-body">{article.body}</p>
 
         <div className="article-stats">
-        <div className="votes-box">
+        {/* <div className="votes-box">
           <span className="votes-value">👍 {article.votes}</span>
-          </div>
+          </div> */}
           <div className="comments-box">
           <span className="comments-value">🗪 {article.comment_count} Comments</span>
         </div>

@@ -12,9 +12,9 @@ function ArticleCard({ article }) {
         <p className="article-meta">Topic: {article.topic}</p>
 
         <div className="article-stats">
-        <div className="votes-box">
+        {/* <div className="votes-box">
           <span className="votes-value">👍 {article.votes}</span>
-          </div>
+          </div> */}
           <div className="comments-box">
           <span className="comments-value">🗪 {article.comment_count} Comments</span>
         </div>
