@@ -116,7 +116,15 @@
   gap: 5px; 
 }
 
-.votes-box {
+.vote-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.vote-button {
+  font-size: 25px;
   padding: 8px 12px;
   border-radius: 8px;
   font-weight: bold;
@@ -125,7 +133,15 @@
   gap: 5px; 
 }
 
-.votes-value,
+.vote-button:hover {
+  transform: scale(1.2);  
+}
+
+#vote-count {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .comments-value {
   font-size: 1.25rem;
   color: white
