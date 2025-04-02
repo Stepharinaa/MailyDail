@@ -29,7 +29,7 @@ function CommentSection() {
         if (!newComment.trim()) return;
 
         setIsPosting(true)
-        postCommentByArticleID(article_id, { username: "grumpy19", body: newComment})
+        postCommentByArticleID(article_id, { username: "Cool New User", body: newComment})
         .then((comment) => {
             setComments((previousComments) => [comment, ...previousComments])
             setNewComment("")
