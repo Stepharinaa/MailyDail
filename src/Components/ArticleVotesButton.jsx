@@ -7,6 +7,7 @@ function ArticleVotesButton({articleID, currentVotes}) {
     const [error, setError] = useState(null)
 
     useEffect(() => {
+        setIsLoading(true)
         setVotes(currentVotes);
     }, [currentVotes]);
 
