@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 import {useParams} from "react-router-dom"
 import {fetchSingleArticle} from "../utils/api"
 import CommentSection from "../Components/CommentSection";
+import ArticleVotesButton from "../Components/ArticleVotesButton";
 
 function SingleArticlePage() {
     const {article_id} = useParams()
@@ -31,6 +32,7 @@ function SingleArticlePage() {
           <img className="article-img" src={article.article_img_url} alt={article.title}/>
           <p>Posted: {new Date(article.created_at).toLocaleDateString()}</p>
           <p className="article-body">{article.body}</p>
+          <ArticleVotesButton articleID={article_id} currentVotes={article.votes}/>
 
         <div className="article-stats">
         {/* <div className="votes-box">

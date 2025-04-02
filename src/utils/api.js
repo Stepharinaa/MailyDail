@@ -29,6 +29,16 @@ const fetchSingleArticle = (article_id) => {
     });
 };
 
+const updateVotesOnArticle = (article_id, voteChange) => {
+  return api
+    .patch(`/articles/${article_id}`, { inc_votes: voteChange })
+    .then(({ data }) => data.article)
+    .catch((error) => {
+      console.error("Error updating votes:", error);
+      throw error;
+    });
+};
+
 const fetchCommentsByArticleID = (article_id) => {
   return api
     .get(`/articles/${article_id}/comments`)
@@ -72,6 +82,7 @@ const fetchTopics = () => {
 export {
   fetchArticles,
   fetchSingleArticle,
+  updateVotesOnArticle,
   fetchCommentsByArticleID,
   postCommentByArticleID,
   fetchTop5Articles,
