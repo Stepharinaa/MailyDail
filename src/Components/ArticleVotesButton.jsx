@@ -29,11 +29,11 @@ function ArticleVotesButton({articleID, currentVotes}) {
         }
 
     return(
-        <div className="vote=container"> 
+        <div className="vote-container"> 
             <button className="vote-button" onClick={() => handleVote(1)}>👍</button>
-            <p id="vote-count">Votes: {votes} </p>
+            <p className="vote-count">Votes: {votes}</p>
             <button className="vote-button" onClick={() => handleVote(-1)}>👎</button>
-            {error && <p id="error-message">{error}</p>}
+            {error && <p className="error-message">{error}</p>}
         </div>
     )
 }
