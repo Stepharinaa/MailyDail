@@ -131,6 +131,11 @@
   color: white
 }
 
+#error-message {
+  font-weight: bold;
+  color: red
+}
+
 .card {
   padding: 2em;
 }
