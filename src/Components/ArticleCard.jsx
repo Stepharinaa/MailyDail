@@ -12,11 +12,9 @@ function ArticleCard({ article }) {
         </h2>
           <p className="article-meta">Topic: {article.topic}</p>
         <span className="article-author">Written by: {article.author}</span>
-        {/* <div className="article-stats"> */}
           <div className="comments-box">
           <span className="comments-value">🗪 {article.comment_count} Comments</span>
         </div>
-      {/* </div> */}
       </div>
     </article>
   );
