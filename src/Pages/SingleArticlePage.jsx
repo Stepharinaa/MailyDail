@@ -9,21 +9,32 @@ function SingleArticlePage() {
     const {article_id} = useParams()
     const [article, setArticle] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null)
 
     useEffect(() => {
+      setIsLoading(true)
         fetchSingleArticle(article_id)
           .then((data) => {
-            setArticle(data);
+            if (!data) {
+              setError("Oops! The article you're looking for doesn't exist.");
+            } else {
+              setArticle(data);
+            }
             setIsLoading(false);
           })
           .catch((error) => {
             console.error("Error fetching article:", error);
+            if (error.response && error.response.status === 404) {
+              setError("Oops! The article you're looking for doesn't exist.")
+            } else {
+            setError("Error fetching article. Please try again!")
+            }
             setIsLoading(false);
           });
       }, [article_id]);
 
       if (isLoading) return <p>Loading article...</p>;
-      if (!article) return <p>Article not found!</p>;
+      if (error) return <p>{error}</p>;
 
       return (
         <article className="single-article">
