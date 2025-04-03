@@ -28,7 +28,7 @@ function SortByBox({ onSortChange, onOrderChange }) {
       <label htmlFor="order-by">Order by:</label>
       <select id="order-by" value={order} onChange={handleOrderChange}>
       <option value="DESC">Descending ↓</option>
-      <option value="ASC">Ascending ↑</option>
+      <option value="ASC">Ascending </option>
       </select>
     </div>
   )
