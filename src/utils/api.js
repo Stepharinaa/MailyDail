@@ -86,6 +86,20 @@ const fetchTopics = () => {
     });
 };
 
+const fetchArticlesByTopic = (topic, sortBy = "created_at") => {
+  let url = `/articles?sort_by=${sortBy}&order=DESC`;
+  if (topic) {
+    url += `&topic=${topic}`;
+  }
+  return api
+    .get(url)
+    .then(({ data }) => data.articles)
+    .catch((error) => {
+      console.error("Error fetching articles by topic:", error);
+      throw error;
+    });
+};
+
 export {
   fetchArticles,
   fetchSingleArticle,
@@ -95,4 +109,5 @@ export {
   deleteCommentByCommentID,
   fetchTop5Articles,
   fetchTopics,
+  fetchArticlesByTopic,
 };
