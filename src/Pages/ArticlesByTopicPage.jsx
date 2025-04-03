@@ -2,17 +2,20 @@ import { useState, useEffect } from "react"
 import { useParams} from "react-router-dom"
 import { fetchArticlesByTopic } from "../utils/api"
 import ArticleCard from "../Components/ArticleCard"
+import SortByBox from "../Components/SortByBox"
 
 
 function ArticlesByTopic() {
     const {slug} = useParams()
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [sortBy, setSortBy] = useState("created_at");
+    const [order, setOrder] = useState("DESC")
     const [error, setError] = useState(null)
 
     useEffect(() => {
         setIsLoading(true)
-        fetchArticlesByTopic(slug)
+        fetchArticlesByTopic(sortBy, order, slug)
  .then((data) => {
         setArticles(data)
         setIsLoading(false)
@@ -22,12 +25,13 @@ function ArticlesByTopic() {
         setError("Failed to load articles. Please try again!")
         setIsLoading(false)
     })
-}, [slug])
+}, [sortBy, order, slug])
 
 return (
     <section className="topic-articles-container">
       <h1>Articles about {slug}</h1>
       {error && <p className="error-message">{error}</p>}
+      <SortByBox onSortChange={setSortBy} onOrderChange={setOrder}/>
       {isLoading ? (
         <p>Loading articles...</p>
       ) : (
