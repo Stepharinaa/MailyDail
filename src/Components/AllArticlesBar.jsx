@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react'
 import { fetchTopics } from '../utils/api'
 
-function AllArticlesBar({ setSortBy, setTopic}) {
+function AllArticlesBar({ setTopic }) {
 const [topics, setTopics] = useState([])
 const [isLoading, setIsLoading] = useState(true)
 
@@ -19,13 +19,6 @@ useEffect(() => {
 
     return (
         <div className="all-articles-bar">
-          <label htmlFor="sort-by">Sort by:</label>
-          <select id="sort-by" onChange={(element) => setSortBy(element.target.value)}>
-            <option value="created_at">Date</option>
-            <option value="votes">Votes</option>
-            <option value="author">Author</option>
-          </select>
-    
           <label htmlFor="topic-filter">Filter by Topic:</label>
           {isLoading ? (
         <p>Loading topics...</p>
