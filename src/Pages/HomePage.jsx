@@ -8,6 +8,7 @@ function HomePage(){
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
+        setIsLoading(true)
         fetchTop5Articles()
         .then((data) => {
             setArticles(data)
