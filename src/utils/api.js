@@ -4,8 +4,8 @@ const api = axios.create({
   baseURL: "https://stephs-northcoders-news.onrender.com/api",
 });
 
-const fetchArticles = (sortBy = "created_at", topic = "") => {
-  let url = sortBy ? `/articles?sort_by=${sortBy}&order=DESC` : "/articles";
+const fetchArticles = (sortBy = "created_at", order = "DESC", topic = "") => {
+  let url = sortBy ? `/articles?sort_by=${sortBy}&order=${order}` : "/articles";
   if (topic) {
     url += `&topic=${topic}`;
   }
