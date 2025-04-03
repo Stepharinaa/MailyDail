@@ -41,7 +41,7 @@ function AllTopicsPage() {
                 />
                   </div>
                   <div className="topic-content">
-                    <p className="topic-description">{topic.description}</p>
+                    <p>{topic.description}</p>
                     <h3 className="topic-title">{topic.slug}</h3>
                   </div>
                 </Link>
