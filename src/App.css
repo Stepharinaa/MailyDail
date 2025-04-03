@@ -309,7 +309,15 @@
   border: 1px solid #ddd;
 }
 
+#order-by {
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
 #sort-by {
+  font-size: 1rem;
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #ddd;
