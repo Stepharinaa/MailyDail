@@ -35,14 +35,15 @@ return (
         <div>
           {articles.length > 0 ? (
             articles.map((article) => (
-              <div key={article.article_id}>
-                <h2>{article.title}</h2>
+              <div key={article.article_id} className="article-card">
+                <h2 className="article-title">{article.title}</h2>
+                
                 <img
                 src={article.article_img_url || ArticlePlaceHolderImage}
                 alt={article.slug}
-                className="topic-image"
+                className="article-img"
                 />
-                <Link to={`/articles/${article.article_id}`}>Read more</Link>
+                <Link to={`/articles/${article.article_id}`} className="read-more-link">Read more</Link>
               </div>
             ))
           ) : (
