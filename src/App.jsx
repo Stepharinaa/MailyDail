@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import Header from "./Components/Header";
 import SingleArticlePage from "./Pages/SingleArticlePage";
+import AllTopicsPage from "./Pages/AllTopicsPage";
 
 import "./App.css"
 
