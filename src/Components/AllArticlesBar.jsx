@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react'
 import { fetchTopics } from '../utils/api'
 
-function AllArticlesBar({ setTopic }) {
+function FilterByTopicBar({ setTopic }) {
 const [topics, setTopics] = useState([])
 const [isLoading, setIsLoading] = useState(true)
 
@@ -36,4 +36,4 @@ useEffect(() => {
       );
 } 
 
-export default AllArticlesBar;
+export default FilterByTopicBar;
