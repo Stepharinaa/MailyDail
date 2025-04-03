@@ -293,6 +293,36 @@
   font-size: 1.2rem;
 }
 
+.sort-by-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.sort-by-bar select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#order-by {
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#sort-by {
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
 .all-articles-bar {
   display: flex;
   gap: 10px;
