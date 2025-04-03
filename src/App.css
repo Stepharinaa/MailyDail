@@ -397,3 +397,13 @@
   margin-top: 10px;
   margin-bottom: 30px;
 }
+
+.read-more-link {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007BFF;
+}
+
+.read-more-link:hover {
+  text-decoration: underline;
+}
