@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useParams, useSearchParams } from "react-router-dom"
 import ArticleList from '../Components/ArticleList'
 import { fetchArticles } from '../utils/api'
 import SortByBox from '../Components/SortByBox'
@@ -7,9 +8,11 @@ import FilterByTopicBar from '../Components/AllArticlesBar'
 function AllArticlesPage(){
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const [sortBy, setSortBy] = useState("created_at");
-    const [order, setOrder] = useState("DESC")
     const [topic, setTopic] = useState("");
+    const [searchParams, setSearchParams] = useSearchParams()
+
+    const sortBy = searchParams.get("sort_by") || "created_at"
+    const order = searchParams.get("order") || "DESC"
 
     useEffect(() => {
         setIsLoading(true)
@@ -24,12 +27,19 @@ function AllArticlesPage(){
         })
     }, [sortBy, order, topic])
 
+    const handleSortChange = (newSortBy) => {
+        setSearchParams({ sort_by: newSortBy, order });
+    };
+    
+    const handleOrderChange = (newOrder) => {
+        setSearchParams({ sort_by: sortBy, order: newOrder });
+    }
 
 return (
     <main>
         <h1>All Articles</h1>
         <FilterByTopicBar setTopic={setTopic} />
-        <SortByBox onSortChange={setSortBy} onOrderChange={setOrder}/>
+        <SortByBox onSortChange={handleSortChange} onOrderChange={handleOrderChange}/>
         {isLoading ? <p>Loading articles...</p> : <ArticleList articles={articles} />}
     </main>
 );
