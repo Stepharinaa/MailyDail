@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import articlePlaceHolderImage from "../assets/article-placeholder-image.png"
 
 function ArticleCard({ article }) {
   return (
     <article className="article-card">
-      <img src={article.article_img_url} alt={article.title} className="article-img" />
+      <img src={article.article_img_url || articlePlaceHolderImage} alt={article.title} className="article-img" />
       <div className="article-content">
         <h2 className="article-title">
           <Link to={`/articles/${article.article_id}`}>{article.title}</Link>
