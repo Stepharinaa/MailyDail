@@ -3,6 +3,7 @@ import HomePage from "./Pages/HomePage";
 import Header from "./Components/Header";
 import SingleArticlePage from "./Pages/SingleArticlePage";
 import AllTopicsPage from "./Pages/AllTopicsPage";
+import ArticlesByTopicPage from "./Pages/ArticlesByTopicPage";
 
 import "./App.css"
 
