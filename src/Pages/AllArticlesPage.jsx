@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import ArticleList from '../Components/ArticleList'
 import AllArticlesBar from '../Components/AllArticlesBar'
 import { fetchArticles } from '../utils/api'
+import SortByBox from '../Components/SortByBox'
 
 function AllArticlesPage(){
     const [articles, setArticles] = useState([])
@@ -27,7 +28,8 @@ function AllArticlesPage(){
 return (
     <main>
         <h1>All Articles</h1>
-        <AllArticlesBar setSortBy={setSortBy} setTopic={setTopic} />
+        <AllArticlesBar setTopic={setTopic} />
+        <SortByBox onSortChange={setSortBy} />
         {isLoading ? <p>Loading articles...</p> : <ArticleList articles={articles} />}
     </main>
 );
