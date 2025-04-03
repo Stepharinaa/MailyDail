@@ -7,18 +7,15 @@ function ArticleCard({ article }) {
       <div className="article-content">
         <h2 className="article-title">
           <Link to={`/articles/${article.article_id}`}>{article.title}</Link>
-        </h2>
-        <span className="article-author">Written by: {article.author}</span>
-        <p className="article-meta">Topic: {article.topic}</p>
 
-        <div className="article-stats">
-        {/* <div className="votes-box">
-          <span className="votes-value">👍 {article.votes}</span>
-          </div> */}
+        </h2>
+          <p className="article-meta">Topic: {article.topic}</p>
+        <span className="article-author">Written by: {article.author}</span>
+        {/* <div className="article-stats"> */}
           <div className="comments-box">
           <span className="comments-value">🗪 {article.comment_count} Comments</span>
         </div>
-      </div>
+      {/* </div> */}
       </div>
     </article>
   );

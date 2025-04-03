@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
 .header {
+  font-family: "Newsreader";
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,20 +84,23 @@
   justify-content: center;
   align-items: center; 
   gap: 12px; 
-  margin-top: 10px;
+  margin-top: 15px;
   flex-wrap: wrap;
 }
 
 .article-author {
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #555;
+  margin-bottom: 0.5rem;
 }
 
 .article-meta {
-  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.35rem;
   color: black; 
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .article-footer {
@@ -106,6 +113,7 @@
 }
 
 .comments-box {
+  margin-top: 10px;
   padding: 8px 12px;
   border-radius: 8px;
   font-weight: bold;
@@ -114,6 +122,14 @@
   display: flex;
   align-items: center;
   gap: 5px; 
+  width: 160px; 
+}
+
+.comments-value {
+  font-size: 1.25rem;
+  color: white;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 .vote-container {
@@ -148,11 +164,6 @@
   color: white;
 }
 
-.comments-value {
-  font-size: 1.25rem;
-  color: white
-}
-
 .error-message {
   font-weight: bold;
   color: red
@@ -179,8 +190,8 @@
 .navigation-links a {
   text-decoration: none;
   color: #333;
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.75rem;
+  font-weight: 600;
 }
 
 .navigation-links a:hover {
@@ -198,8 +209,10 @@
 }
 
 .welcome-message h1 {
+  font-family: "Newsreader";
+  font-weight: bold;
   color: #333;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .welcome-message p {
