@@ -3,16 +3,16 @@ import { useParams, useSearchParams } from "react-router-dom"
 import ArticleList from '../Components/ArticleList'
 import { fetchArticles } from '../utils/api'
 import SortByBox from '../Components/SortByBox'
-import FilterByTopicBar from '../Components/AllArticlesBar'
+import FilterByTopicBar from '../Components/FilterByTopicBar'
 
 function AllArticlesPage(){
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const [topic, setTopic] = useState("");
     const [searchParams, setSearchParams] = useSearchParams()
 
     const sortBy = searchParams.get("sort_by") || "created_at"
     const order = searchParams.get("order") || "DESC"
+    const topic = searchParams.get("topic") || ""
 
     useEffect(() => {
         setIsLoading(true)
@@ -35,10 +35,14 @@ function AllArticlesPage(){
         setSearchParams({ sort_by: sortBy, order: newOrder });
     }
 
+    const handleTopicChange = (newTopic) => {
+        setSearchParams({ sort_by: sortBy, order: order, topic: newTopic });
+    };
+
 return (
     <main>
         <h1>All Articles</h1>
-        <FilterByTopicBar setTopic={setTopic} />
+        <FilterByTopicBar setTopic={handleTopicChange} />
         <SortByBox onSortChange={handleSortChange} onOrderChange={handleOrderChange}/>
         {isLoading ? <p>Loading articles...</p> : <ArticleList articles={articles} />}
     </main>
