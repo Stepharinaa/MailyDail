@@ -99,7 +99,7 @@ return (
                   onClick={() => handleDeleteComment(comment.comment_id)}
                   disabled={isDeleting[comment.comment_id]}
                 >
-                  {isDeleting[comment.comment_id] ? "Deleting..." : "Remove comment"}
+                  {isDeleting[comment.comment_id] ? "Deleting..." : "🗑️ Remove comment"}
                 </button>
               )}  
 
