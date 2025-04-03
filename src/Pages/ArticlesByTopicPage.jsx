@@ -1,7 +1,6 @@
-import {useState, useEffect} from "react"
-import { useParams, Link } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { useParams} from "react-router-dom"
 import { fetchArticlesByTopic } from "../utils/api"
-import ArticlePlaceHolderImage from "../assets/article-placeholder-image.png"
 import ArticleCard from "../Components/ArticleCard"
 
 
