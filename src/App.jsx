@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import SingleArticlePage from "./Pages/SingleArticlePage";
 import AllTopicsPage from "./Pages/AllTopicsPage";
 import ArticlesByTopicPage from "./Pages/ArticlesByTopicPage";
+import InvalidPathPage from "./Pages/InvalidPathPage";
 
 import "./App.css"
 
