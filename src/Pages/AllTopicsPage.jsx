@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react"
 import { Link } from "react-router-dom"
 import { fetchTopics } from "../utils/api"
+import topicPlaceholderImage from "../assets/topic-placeholder-image.jpg"
 
 function AllTopicsPage() {
     const [topics, setTopics] = useState([])
@@ -33,13 +34,11 @@ function AllTopicsPage() {
               {topics.map((topic) => (
                 <Link to={`/topics/${topic.slug}`} key={topic.slug} className="topic-card">
                   <div className="topic-image-wrapper">
-                    {topic.img_url && (
-                      <img
-                        src={topic.img_url}
-                        alt={topic.slug}
-                        className="topic-image"
-                      />
-                    )}
+                  <img
+                  src={topic.img_url || topicPlaceholderImage}
+                  alt={topic.slug}
+                  className="topic-image"
+                />
                   </div>
                   <div className="topic-content">
                     <p className="topic-description">{topic.description}</p>
