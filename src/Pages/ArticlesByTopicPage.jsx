@@ -1,9 +1,9 @@
 import {useState, useEffect} from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { fetchArticlesByTopic } from "../utils/api"
-import {Link} from "react-router-dom"
 import ArticlePlaceHolderImage from "../assets/article-placeholder-image.png"
-import ArticleVotesButton from "../Components/ArticleVotesButton"
+import ArticleCard from "../Components/ArticleCard"
+
 
 function ArticlesByTopic() {
     const {slug} = useParams()
@@ -32,19 +32,10 @@ return (
       {isLoading ? (
         <p>Loading articles...</p>
       ) : (
-        <div>
+        <div className="articles-list">
           {articles.length > 0 ? (
             articles.map((article) => (
-              <div key={article.article_id} className="article-card">
-                <h2 className="article-title">{article.title}</h2>
-                
-                <img
-                src={article.article_img_url || ArticlePlaceHolderImage}
-                alt={article.slug}
-                className="article-img"
-                />
-                <Link to={`/articles/${article.article_id}`} className="read-more-link">Read more</Link>
-              </div>
+              <ArticleCard key={article.article_id} article={article} /> 
             ))
           ) : (
             <p>No articles found for this topic.</p>
@@ -53,7 +44,6 @@ return (
       )}
     </section>
   );
-
 }
 
-export default ArticlesByTopic
+export default ArticlesByTopic;
