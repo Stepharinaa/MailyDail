@@ -1,27 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack header items vertically */
+    align-items: flex-start; /* Align items to the left */
+  }
+  .article-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .topic-image-wrapper {
+    height: 150px; 
+  }
+}
+
+.header,
+.topics-container,
+.single-article,
+.article-card {
+  max-width: 800px;
+  max-height: 700px;
+  margin: 0 auto;  /* Centers the content */
+  padding: 0 20px;  /* Adds padding for some space on the sides */
+}
+
+.article-img,
+.topic-image {
+  max-width: 100%;  /* Ensures the image doesn't overflow its container */
+  height: auto;  /* Maintains the image aspect ratio */
+  object-fit: cover;  /* Ensures the image covers the container without distortion */
+}
+
 .header {
   font-family: "Newsreader";
   font-weight: bold;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   background-color: #f8f9fa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.site-title {
-  font-size: 4rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-
-.logo-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -55,14 +76,14 @@
 }
 
 .article-img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 8px;
 }
 
 .article-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: black; 
   text-decoration: none; 
@@ -90,7 +111,7 @@
 
 .article-author {
   font-weight: normal;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #555;
   margin-bottom: 0.5rem;
 }
@@ -98,7 +119,7 @@
 .article-meta {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 1.35rem;
+  font-size: 1rem;
   color: black; 
   text-decoration: none;
 }
@@ -181,7 +202,7 @@
 
 .comments-box {
   margin-top: 10px;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 8px;
   font-weight: bold;
   text-align: center;
@@ -189,11 +210,11 @@
   display: flex;
   align-items: center;
   gap: 5px; 
-  width: 160px; 
+  width: 130px; 
 }
 
 .comments-value {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: white;
   justify-content: center;
   white-space: nowrap;
@@ -257,13 +278,14 @@
 
 .navigation-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
 }
 
 .navigation-links a {
   text-decoration: none;
   color: #333;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
@@ -273,6 +295,7 @@
 
 .welcome-message {
   text-align: center;
+  font-size: 1rem;
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 8px;
@@ -285,12 +308,12 @@
   font-family: "Newsreader";
   font-weight: bold;
   color: #333;
-  font-size: 2.5rem;
+  font-size: 1.75rem;
 }
 
 .welcome-message p {
   color: #555;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .sort-by-bar {
@@ -349,6 +372,7 @@
 }
 
 .article-header {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;

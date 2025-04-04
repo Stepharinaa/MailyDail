@@ -1,12 +1,97 @@
-# React + Vite
+# Article Sharing Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Deployed Version:
 
-Currently, two official plugins are available:
+You can view the live version of the app here:
+https://mailydail.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Description:
 
-## Expanding the ESLint configuration
+Inspired by Reddit/BBC News, this project is a web application that allows users to browse articles on a variety of topics, read articles, comment on them, and vote for their favorite ones!
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+It features a clean, modern interface with flexible sorting and filtering options for articles, and provides user interaction through comments and votes.
+
+The application is fully responsive and works well on both desktop and mobile devices. It utilises React for the frontend and communicates with a RESTful API for retrieving and posting data.
+
+## Features:
+
+- Browse articles by different topics (including filter functionality).
+
+- Sort articles based on date or votes.
+
+- Read articles and see detailed content.
+
+- Vote on articles to increase their popularity.
+
+- Comment on articles to engage with other users.
+
+- Remove their own comment(s).
+
+## How to Use:
+
+1. Visit the deployed version of the app linked above.
+
+2. Explore the list of articles.
+
+3. Click on any article to read the full content and see related comments.
+
+4. Sort articles or filter them by topic to find what interests you.
+
+5. Vote and comment to interact with the content (_currently, users are hardcoded to have username of grumpy19. I am planning to add some form of authentication in the near future_).
+
+6. Delete comment(s) as you see fit.
+
+## Backend Repository:
+
+The backend API for this project can be found here: https://stephs-northcoders-news.onrender.com/api
+
+## Technologies Used:
+
+- React
+- React Router
+- Node.js
+- Express.js
+- CSS3
+- Vite
+- Flexbox / Grid Layout
+- Google Fonts
+
+## Minimum Node Version:
+
+This project requires Node.js v16 or higher.
+
+_You can check your current Node.js version by running the following command in your terminal:_
+
+```
+node --version
+```
+
+## Running the Project Locally:
+
+### 1. Clone the Repository:
+
+```
+git clone <https://github.com/Stepharinaa/my-nc-news-project>
+```
+
+### 2. Navigate into the project directory:
+
+```
+cd <my-nc-news-project>
+```
+
+### 3. Install the required dependencies:
+
+```
+npm install
+```
+
+### 4. Now, run the app!
+
+```
+npm start
+```
+
+---
+
+This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
