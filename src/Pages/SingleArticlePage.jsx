@@ -15,11 +15,7 @@ function SingleArticlePage() {
       setIsLoading(true)
         fetchSingleArticle(article_id)
           .then((data) => {
-            if (!data) {
-              setError("Oops! The article you're looking for doesn't exist.");
-            } else {
-              setArticle(data);
-            }
+            setArticle(data);
             setIsLoading(false);
           })
           .catch((error) => {
@@ -34,7 +30,7 @@ function SingleArticlePage() {
       }, [article_id]);
 
       if (isLoading) return <p>Loading article...</p>;
-      if (error) return <p>{error}</p>;
+      if (error) return <p className="error-message">{error}</p>;
 
       return (
         <article className="single-article">
