@@ -55,6 +55,7 @@ The backend API for this project can be found here: https://stephs-northcoders-n
 - Vite
 - Flexbox / Grid Layout
 - Google Fonts
+- Axios
 
 ## Minimum Node Version:
 

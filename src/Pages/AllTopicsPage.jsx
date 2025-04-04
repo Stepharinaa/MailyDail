@@ -2,6 +2,7 @@ import {useState, useEffect} from "react"
 import { Link } from "react-router-dom"
 import { fetchTopics } from "../utils/api"
 import topicPlaceholderImage from "../assets/topic-placeholder-image.jpg"
+import LoadingAnimation from "../Components/LoadingAnimation"
 
 function AllTopicsPage() {
     const [topics, setTopics] = useState([])
@@ -27,7 +28,7 @@ function AllTopicsPage() {
         })
     }, []) 
 
-    if (isLoading) return <p>Loading topics...</p>;
+    if (isLoading) return <LoadingAnimation />;
     if (error) return <p className="error-message">{error}</p>;
 
     return (

@@ -3,8 +3,8 @@
 
 @media (max-width: 768px) {
   .header {
-    flex-direction: column; /* Stack header items vertically */
-    align-items: flex-start; /* Align items to the left */
+    flex-direction: column; 
+    align-items: flex-start; 
   }
   .article-card {
     flex-direction: column;
@@ -21,15 +21,15 @@
 .article-card {
   max-width: 800px;
   max-height: 700px;
-  margin: 0 auto;  /* Centers the content */
-  padding: 0 20px;  /* Adds padding for some space on the sides */
+  margin: 0 auto; 
+  padding: 0 20px;  
 }
 
 .article-img,
 .topic-image {
-  max-width: 100%;  /* Ensures the image doesn't overflow its container */
-  height: auto;  /* Maintains the image aspect ratio */
-  object-fit: cover;  /* Ensures the image covers the container without distortion */
+  max-width: 100%;  
+  height: auto;  
+  object-fit: cover; 
 }
 
 .header {
@@ -460,4 +460,13 @@
 
 .read-more-link:hover {
   text-decoration: underline;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  height: 100vh;            
+  width: 100%;              
+  background-color: #f8f9fa;
 }

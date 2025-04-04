@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom"
 import {fetchSingleArticle} from "../utils/api"
 import CommentSection from "../Components/CommentSection";
 import ArticleVotesButton from "../Components/ArticleVotesButton";
+import LoadingAnimation from "../Components/LoadingAnimation";
 
 function SingleArticlePage() {
     const {article_id} = useParams()
@@ -30,7 +31,7 @@ function SingleArticlePage() {
           });
       }, [article_id]);
 
-      if (isLoading) return <p>Loading article...</p>;
+      if (isLoading) return <LoadingAnimation />;
       if (error) return <p className="error-message">{error}</p>;
 
       return (

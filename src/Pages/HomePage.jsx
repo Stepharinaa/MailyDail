@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import ArticleList from '../Components/ArticleList'
 import { fetchTop5Articles } from '../utils/api'
 import WelcomeMessage from '../Components/WelcomeMessage'
+import LoadingAnimation from '../Components/LoadingAnimation'
 
 function HomePage(){
     const [articles, setArticles] = useState([])
@@ -27,7 +28,7 @@ function HomePage(){
         })
     }, [])
 
-    if (isLoading) return <p>Loading articles...</p>;
+    if (isLoading) return <LoadingAnimation />;
     if (error) return <p className="error-message">{error}</p>;
 
 return (

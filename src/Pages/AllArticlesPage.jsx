@@ -4,6 +4,7 @@ import ArticleList from '../Components/ArticleList'
 import { fetchArticles } from '../utils/api'
 import SortByBox from '../Components/SortByBox'
 import FilterByTopicBar from '../Components/FilterByTopicBar'
+import LoadingAnimation from '../Components/LoadingAnimation'
 
 function AllArticlesPage(){
     const [articles, setArticles] = useState([])
@@ -34,7 +35,7 @@ function AllArticlesPage(){
         })
     }, [sortBy, order, topic])
 
-    if (isLoading) return <p>Loading articles...</p>;
+    if (isLoading) return <LoadingAnimation />;
     if (error) return <p className="error-message">{error}</p>;
 
     const handleSortChange = (newSortBy) => {

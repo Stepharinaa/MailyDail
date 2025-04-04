@@ -3,6 +3,7 @@ import { useParams, useSearchParams } from "react-router-dom"
 import { fetchArticlesByTopic } from "../utils/api"
 import ArticleCard from "../Components/ArticleCard"
 import SortByBox from "../Components/SortByBox"
+import LoadingAnimation from "../Components/LoadingAnimation"
 
 
 function ArticlesByTopic() {
@@ -34,7 +35,7 @@ function ArticlesByTopic() {
   })
 }, [sortBy, order, slug])
 
-if (isLoading) return <p>Loading articles...</p>;
+if (isLoading) return <LoadingAnimation />;
 if (error) return <p className="error-message">{error}</p>;
 
 const handleSortChange = (newSortBy) => {
