@@ -13,6 +13,7 @@ function SingleArticlePage() {
 
     useEffect(() => {
       setIsLoading(true)
+      setError(null)
         fetchSingleArticle(article_id)
           .then((data) => {
             setArticle(data);
