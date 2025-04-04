@@ -4,15 +4,31 @@ const api = axios.create({
   baseURL: "https://stephs-northcoders-news.onrender.com/api",
 });
 
-const fetchArticles = (sortBy = "created_at", order = "DESC", topic = "") => {
-  let url = sortBy ? `/articles?sort_by=${sortBy}&order=${order}` : "/articles";
+const fetchArticles = (
+  limit = 0,
+  page = 1,
+  sortBy = "created_at",
+  order = "DESC",
+  topic = ""
+) => {
+  let url = `/articles?limit=${limit}&page=${page}`;
+
+  if (sortBy) {
+    url += `&sort_by=${sortBy}&order=${order}`;
+  }
+
   if (topic) {
     url += `&topic=${topic}`;
   }
 
   return api
     .get(url)
-    .then(({ data }) => data.articles)
+    .then(({ data }) => {
+      return {
+        articles: data.articles,
+        total_count: data.total_count,
+      };
+    })
     .catch((error) => {
       console.error("Error fetching articles:", error);
       throw error;

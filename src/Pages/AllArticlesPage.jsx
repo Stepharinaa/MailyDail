@@ -15,13 +15,19 @@ function AllArticlesPage(){
     const sortBy = searchParams.get("sort_by") || "created_at"
     const order = searchParams.get("order") || "DESC"
     const topic = searchParams.get("topic") || ""
+    const limit = parseInt(searchParams.get("limit")) || 10
+    const currentPage = parseInt(searchParams.get("page")) || 1
+
+    const [totalPages, setTotalPages] = useState(10)
 
     useEffect(() => {
         setIsLoading(true)
         setError(null)
-        fetchArticles(sortBy, order, topic)
-        .then((data) => {
-            setArticles(data)
+
+        fetchArticles(limit, currentPage, sortBy, order, topic)
+        .then(({articles, total_count}) => {
+            setArticles(articles)
+            setTotalPages(Math.ceil(total_count/limit) || 1)
             setIsLoading(false)
         })
         .catch((error) => {
@@ -33,10 +39,7 @@ function AllArticlesPage(){
             }
             setIsLoading(false);
         })
-    }, [sortBy, order, topic])
-
-    if (isLoading) return <LoadingAnimation />;
-    if (error) return <p className="error-message">{error}</p>;
+    }, [limit, currentPage, sortBy, order, topic])
 
     const handleSortChange = (newSortBy) => {
         setSearchParams({ sort_by: newSortBy, order });
@@ -50,6 +53,27 @@ function AllArticlesPage(){
         setSearchParams({ sort_by: sortBy, order: order, topic: newTopic });
     };
 
+    const goToPage = (page) => {
+        if (page >= 1 && page <= totalPages) {
+        setSearchParams({ sort_by: sortBy, order, topic, page, limit })
+        }
+    }
+
+    const handlePrevPage = () => {
+        if (currentPage > 1) {
+            goToPage(currentPage - 1);
+        }
+    };
+
+    const handleNextPage = () => {
+        if (currentPage < totalPages) {
+            goToPage(currentPage + 1);
+        }
+    };
+
+    if (isLoading) return <LoadingAnimation />;
+    if (error) return <p className="error-message">{error}</p>;
+
 return (
     <main>
         <h1>All Articles</h1>
@@ -59,6 +83,15 @@ return (
         ) : (
         <ArticleList articles={articles} />
         )}
+        <div className="pagination-controls">
+            <button onClick={handlePrevPage} disabled={currentPage === 1}>
+                    Prev
+            </button>
+            <span>Page {currentPage} of {totalPages}</span>
+            <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+                    Next
+            </button>
+            </div>
     </main>
 );
 }

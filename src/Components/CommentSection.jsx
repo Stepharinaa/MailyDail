@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom"
 import { fetchCommentsByArticleID, postCommentByArticleID, deleteCommentByCommentID } from "../utils/api"
-import convertToLocalTimeZone from "../utils/localTimezone";
+import timeAgo from "../utils/formatTimeToNow";
 
 function CommentSection() {
   const {article_id} = useParams()
@@ -88,10 +88,10 @@ return (
             <li key={comment.comment_id} className="comment">
               <div className="comment-header">
               <p id="comment-author">{comment.author}: </p>
-              <p id="comment-timestamp">Created: {convertToLocalTimeZone(comment.created_at)}</p>
+              <p id="comment-timestamp">Created: {timeAgo(comment.created_at)}</p>
               </div>
                <p>{comment.body}</p>
-               <p>Votes: {comment.votes}</p>
+               <p id="comment-votes">Votes: {comment.votes}</p>
 
                {comment.author === currentUser && (
                 <button
