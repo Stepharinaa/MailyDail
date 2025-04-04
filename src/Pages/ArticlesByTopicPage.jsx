@@ -17,17 +17,25 @@ function ArticlesByTopic() {
 
     useEffect(() => {
         setIsLoading(true)
+        setError(null)
         fetchArticlesByTopic(sortBy, order, slug)
  .then((data) => {
         setArticles(data)
         setIsLoading(false)
     })
     .catch((error) => {
-        console.error("Error loading articles:", error)
-        setError("Failed to load articles. Please try again!")
-        setIsLoading(false)
-    })
+      console.error("Error fetching articles:", error)
+      if (error.response && error.response.status === 404) {
+        setError("Oops! The article(s) you're looking for doesn't exist.")
+      } else {
+      setError("Error fetching article. Please try again!")
+      }
+      setIsLoading(false);
+  })
 }, [sortBy, order, slug])
+
+if (isLoading) return <p>Loading articles...</p>;
+if (error) return <p className="error-message">{error}</p>;
 
 const handleSortChange = (newSortBy) => {
     setSearchParams({ sort_by: newSortBy, order });
@@ -42,8 +50,8 @@ return (
       <h1>Articles about {slug}</h1>
       {error && <p className="error-message">{error}</p>}
       <SortByBox onSortChange={handleSortChange} onOrderChange={handleOrderChange}/>
-      {isLoading ? (
-        <p>Loading articles...</p>
+      {articles.length === 0 ? (
+        <p>No articles found.</p>
       ) : (
         <div className="articles-list">
           {articles.length > 0 ? (
