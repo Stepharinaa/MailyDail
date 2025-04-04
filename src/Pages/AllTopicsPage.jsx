@@ -10,6 +10,7 @@ function AllTopicsPage() {
 
     useEffect(() => {
         setIsLoading(true)
+        setError(null)
         fetchTopics()
         .then((data) => {
           setTopics(data);
