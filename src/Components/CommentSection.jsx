@@ -90,7 +90,7 @@ return (
               <p id="comment-author">{comment.author}: </p>
               <p id="comment-timestamp">{timeAgo(comment.created_at)}</p>
               </div>
-               <p>{comment.body}</p>
+               <p className="comment">{comment.body}</p>
                <p id="comment-votes">Votes: {comment.votes}</p>
 
                {comment.author === currentUser && (
