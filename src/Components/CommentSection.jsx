@@ -88,7 +88,7 @@ return (
             <li key={comment.comment_id} className="comment">
               <div className="comment-header">
               <p id="comment-author">{comment.author}: </p>
-              <p id="comment-timestamp">Created: {timeAgo(comment.created_at)}</p>
+              <p id="comment-timestamp">{timeAgo(comment.created_at)}</p>
               </div>
                <p>{comment.body}</p>
                <p id="comment-votes">Votes: {comment.votes}</p>
@@ -99,7 +99,7 @@ return (
                   onClick={() => handleDeleteComment(comment.comment_id)}
                   disabled={isDeleting[comment.comment_id]}
                 >
-                  {isDeleting[comment.comment_id] ? "Deleting..." : "🗑️ Remove comment"}
+                  {isDeleting[comment.comment_id] ? "Deleting..." : "🗑️ Delete"}
                 </button>
               )}  
 
