@@ -12,24 +12,27 @@ function AllTopicsPage() {
         setIsLoading(true)
         fetchTopics()
         .then((data) => {
-            setTopics(data)
-            setIsLoading(false)
+          setTopics(data);
+          setIsLoading(false);
         })
         .catch((error) => {
             console.error("Error fetching topics:", error)
-            setError("Failed to load topics. Please try again!")
-            setIsLoading(false)
+            if (error.response && error.response.status === 404) {
+              setError("Oops! The topic you're looking for doesn't exist.")
+            } else {
+            setError("Error fetching topic. Please try again!")
+            }
+            setIsLoading(false);
         })
     }, []) 
 
+    if (isLoading) return <p>Loading topics...</p>;
+    if (error) return <p className="error-message">{error}</p>;
 
     return (
         <section className="topics-container">
           <h1>Topics</h1>
-          {error && <p className="error-message">{error}</p>}
-          {isLoading ? (
-            <p>Loading topics...</p>
-          ) : (
+          {topics.length === 0 ? (<p>No topics found.</p>) : (
             <div className="topics-grid">
               {topics.map((topic) => (
                 <Link to={`/topics/${topic.slug}`} key={topic.slug} className="topic-card">
@@ -47,7 +50,7 @@ function AllTopicsPage() {
                 </Link>
               ))}
             </div>
-          )}
+            )}
         </section>
       );
     }
