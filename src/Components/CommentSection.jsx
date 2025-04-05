@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom"
 import { fetchCommentsByArticleID, postCommentByArticleID, deleteCommentByCommentID } from "../utils/api"
 import timeAgo from "../utils/formatTimeToNow";
+import CommentVotesButton from "./CommentVotesButton";
 
 function CommentSection() {
   const {article_id} = useParams()
@@ -65,7 +66,7 @@ function CommentSection() {
         setIsDeleting((previousComments) => ({...previousComments, [comment_id] : false}))
       })
     }
-
+    if (error) return <p className="error-message">{error}</p>
 return (
     <section className="comment-section">
         <form onSubmit={handleCommentSubmit} className="comment-form">
@@ -80,7 +81,6 @@ return (
         </button>
         </form>
         {confirmationMessage && <p className="confirmation-message">{confirmationMessage}</p>}
-        {error && <p className="error-message">{error}</p>}
         <h2>Comments</h2>
         <ul className="comment-list">
         {comments.length > 0 ? (
@@ -91,7 +91,7 @@ return (
               <p id="comment-timestamp">{timeAgo(comment.created_at)}</p>
               </div>
                <p className="comment">{comment.body}</p>
-               <p id="comment-votes">Votes: {comment.votes}</p>
+               <CommentVotesButton commentID={comment.comment_id} currentVotes={comment.votes}/>
 
                {comment.author === currentUser && (
                 <button
