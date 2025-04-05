@@ -110,7 +110,6 @@
   background-color: white;
   gap: 16px;
   padding: 16px;
-
   flex-wrap: wrap;
 }
 
@@ -374,10 +373,11 @@
 }
 
 .welcome-message {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
   font-size: 1rem;
   padding: 20px;
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
@@ -450,6 +450,16 @@
   border-radius: 5px;
   border: 1px solid #ddd;
   font-size: 1rem;
+}
+
+.dark .topic-bar {
+  background-color: black;
+  color: white;
+}
+
+.dark .topic-bar select {
+  color: white;
+  background-color: #444;
 }
 
 .single-article {
@@ -603,7 +613,6 @@
   margin-top: 20px;
 }
 
-/* Pagination buttons */
 .pagination-controls button {
   padding: 8px 16px;
   font-size: 1rem;
@@ -639,4 +648,111 @@
   height: 100vh;            
   width: 100%;              
   background-color: #f8f9fa;
+}
+
+.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark .header {
+  background-color: #333333;
+  color: #e0e0e0;
+}
+
+.dark .article-card {
+  background-color: black;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+.dark .article-card:hover {
+  background-color: #2c2c2c;
+}
+
+.dark .article-title,
+.dark .article-meta {
+  color: #e0e0e0;
+}
+
+.dark .article-author {
+  color: #bbb;
+}
+
+.dark .article-footer {
+  background-color: #333;
+  color: #bbb;
+}
+
+.dark .topics-container {
+  background-color: #181818;
+}
+
+.dark .topic-card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+.dark .topic-card:hover {
+  background-color: #2c2c2c;
+}
+
+.dark .topic-title {
+  color: #e0e0e0;
+}
+
+.dark .comments-box {
+  background-color: #444;
+}
+
+.dark .navigation-links a {
+  color: #e0e0e0;
+}
+
+.dark .navigation-links a:hover {
+  color: #007bff;
+}
+
+.dark .welcome-message,
+.dark .welcome-message h1,
+.dark .welcome-message p {
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark .sort-by-bar {
+  background-color: black;
+}
+
+.dark .sort-by-bar select,
+.dark #order-by,
+.dark #sort-by {
+  background-color: #444;
+  color: #e0e0e0;
+  border: 1px solid #555;
+  border: 1px solid #ddd;
+}
+
+.dark .vote-container {
+  background-color: #333;
+}
+
+.dark .vote-button:hover {
+  background-color: #444;
+}
+
+.dark .vote-count {
+  background-color: #444;
+  color: #e0e0e0;
+}
+
+.dark .error-message {
+  color: #ff5555;
+}
+
+.dark .confirmation-message {
+  color: #4caf50;
 }

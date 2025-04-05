@@ -34,7 +34,7 @@ function HomePage(){
 return (
     <main>
         <WelcomeMessage/>
-        <h1 className="header">Check out our most popular articles 👀</h1>
+        <h1 className="header-title">Check out our most popular articles 👀</h1>
         {articles.length === 0 ? <p>No articles found.</p> : <ArticleList articles={articles} />}
     </main>
 );
