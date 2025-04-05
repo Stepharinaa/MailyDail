@@ -1,5 +1,6 @@
 import logo from "../assets/mailydail.png";
 import { Link } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 
 function Header() {
   function handleClick() {
@@ -7,6 +8,7 @@ function Header() {
   }
   return (
     <header className="header">
+      <ThemeToggle />
            <div className="logo-title">
       <Link to="/"><img className="logo" src={logo} alt="NC News Logo"/></Link>
       </div>

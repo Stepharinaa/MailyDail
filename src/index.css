@@ -4,7 +4,6 @@
   font-weight: 500;
 
   color: #213547;
-  background-color: #ffffff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,7 +21,7 @@ body {
 
 a {
   font-weight: 500;
-  color: #0d0f11;
+  color: #030303;
   text-decoration: none;
 }
 
@@ -54,7 +53,7 @@ button:focus-visible {
   outline: 2px auto #0073e6;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #ffffff;
     background-color: #242424;
@@ -71,4 +70,4 @@ button:focus-visible {
   button {
     background-color: #1a1a1a;
   }
-}
+} */
