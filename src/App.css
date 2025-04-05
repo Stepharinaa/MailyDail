@@ -79,9 +79,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
+  width: 100%; 
   background-color: #f8f9fa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -732,8 +734,8 @@
 .dark #sort-by {
   background-color: #444;
   color: #e0e0e0;
-  border: 1px solid #555;
-  border: 1px solid #ddd;
+  border: 1px solid #ffffff;
+  
 }
 
 .dark .vote-container {
@@ -755,4 +757,39 @@
 
 .dark .confirmation-message {
   color: #4caf50;
+}
+
+.theme-toggle-button {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  background-color: var(--toggle-bg);
+  color: var(--toggle-text);
+  border: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-button:hover {
+  transform: scale(1.05);
+}
+
+.theme-toggle-button:active {
+  transform: scale(0.97);
+}
+
+:root {
+  --toggle-bg: #f0f0f0;
+  --toggle-text: #333;
+}
+
+
+.dark {
+  --toggle-bg: #2a2a2a;
+  --toggle-text: #f5f5f5;
 }

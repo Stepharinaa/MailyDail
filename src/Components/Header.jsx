@@ -1,27 +1,27 @@
-import logo from "../assets/mailydail.png";
 import { Link } from "react-router-dom";
+
+import lightModeLogo from "../assets/light-mailydail.png";
+import darkModeLogo from "../assets/dark-mailydail.png";
 import ThemeToggle from "./ThemeToggle";
 
-function Header() {
-  function handleClick() {
-    console.log("clicked");
-  }
+
+function Header({ darkMode, setDarkMode }) {
   return (
     <header className="header">
-      <ThemeToggle />
-           <div className="logo-title">
-      <Link to="/"><img className="logo" src={logo} alt="NC News Logo"/></Link>
+      <ThemeToggle setDarkMode={setDarkMode}/>
+      
+      <div className="logo-title">
+      <Link to="/"><img 
+      className="logo" 
+      src={darkMode ? darkModeLogo : lightModeLogo} 
+      alt="Maily Dail Logo" />
+      </Link>
       </div>
+      
       <nav className="navigation-links">
-      <Link to="/articles" onClick={handleClick}>
-        Articles
-      </Link>
-      <Link to="/topics" onClick={handleClick}>
-        Topics
-      </Link>
-      <Link to="/profile" onClick={handleClick}>
-        Profile
-      </Link>
+      <Link to="/articles">Articles</Link>
+      <Link to="/topics">Topics</Link>
+      <Link to="/profile">Profile</Link>
       </nav>
     </header>
   );
