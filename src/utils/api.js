@@ -75,6 +75,16 @@ const postCommentByArticleID = (article_id, newComment) => {
     });
 };
 
+const updateVotesByCommentID = (comment_id, voteChange) => {
+  return api
+    .patch(`/articles/${comment_id}`, { inc_votes: voteChange })
+    .then(({ data }) => data.comment)
+    .catch((error) => {
+      console.error("Error updating votes on comment:", error);
+      throw error;
+    });
+};
+
 const deleteCommentByCommentID = (comment_id) => {
   return api.delete(`/comments/${comment_id}`).catch((error) => {
     console.error("Error removing comment:", error);
@@ -126,6 +136,7 @@ export {
   updateVotesOnArticle,
   fetchCommentsByArticleID,
   postCommentByArticleID,
+  updateVotesByCommentID,
   deleteCommentByCommentID,
   fetchTop5Articles,
   fetchTopics,
