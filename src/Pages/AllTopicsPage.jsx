@@ -33,7 +33,7 @@ function AllTopicsPage() {
 
     return (
         <section className="topics-container">
-          <h1>Topics</h1>
+          <h1 className="header">Topics</h1>
           {topics.length === 0 ? (<p>No topics found.</p>) : (
             <div className="topics-grid">
               {topics.map((topic) => (
