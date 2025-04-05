@@ -76,9 +76,9 @@ function AllArticlesPage(){
 
 return (
     <main>
-        <h1>All Articles</h1>
-        <FilterByTopicBar setTopic={handleTopicChange} />
+        <h1 className="header">All Articles</h1>
         <SortByBox onSortChange={handleSortChange} onOrderChange={handleOrderChange}/>
+        <FilterByTopicBar setTopic={handleTopicChange} />
         {articles.length === 0 ? (<p>No articles found.</p>
         ) : (
         <ArticleList articles={articles} />

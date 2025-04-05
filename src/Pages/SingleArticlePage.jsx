@@ -37,17 +37,18 @@ function SingleArticlePage() {
       return (
         <article className="single-article">
           <h1 className="article-header">{article.title}</h1>
-          <p>Written by: {article.author}</p>
+          <p className="article-meta">Written by: {article.author}</p>
           <img className="article-img" src={article.article_img_url} alt={article.title}/>
-          <p>Posted: {new Date(article.created_at).toLocaleDateString()}</p>
+          <p className="article-meta">Posted: {new Date(article.created_at).toLocaleDateString()}</p>
           <p className="article-body">{article.body}</p>
-          <ArticleVotesButton articleID={article_id} currentVotes={article.votes}/>
 
-        <div className="article-stats">
-          <div className="comments-box">
-          <span className="comments-value">🗪 {article.comment_count} Comments</span>
-        </div>
-      </div>
+          <div className="article-interaction-row">
+    <ArticleVotesButton articleID={article_id} currentVotes={article.votes} />
+
+    <div className="single-article-comments-box">
+      <span className="single-article-comments-value">💬 {article.comment_count} Comments</span>
+    </div>
+  </div>
       <CommentSection articleId={article_id}/>
         </article>
       );

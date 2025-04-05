@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { updateVotesByCommentID } from "../utils/api"
 import LoadingAnimation from "./LoadingAnimation"
+import upvoteButton from "../assets/green-arrow.png"
+import downvoteButton from "../assets/red-arrow.png"
 
 function CommentVotesButton({commentID, currentVotes}) {
     const [votes, setVotes] = useState(currentVotes)
@@ -33,9 +35,9 @@ function CommentVotesButton({commentID, currentVotes}) {
 
         return(
             <div className="comment-vote-container"> 
-                <button className="comment-vote-button" onClick={() => handleVote(1)}>👍</button>
-                <p className="vote-count">Votes: {votes}</p>
-                <button className="comment-vote-button" onClick={() => handleVote(-1)}>👎</button>
+                <button className="comment-vote-button" onClick={() => handleVote(1)}><img src={upvoteButton} alt="Upvote Arrow" className="vote-icon" /></button>
+                <p className="vote-count">{votes}</p>
+                <button className="comment-vote-button" onClick={() => handleVote(-1)}><img src={downvoteButton} alt="Downvote Arrow" className="vote-icon" /></button>
             </div>
         )
 }

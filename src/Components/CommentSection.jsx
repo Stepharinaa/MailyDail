@@ -73,7 +73,7 @@ return (
         <textarea id="add-comment-here"
           value={newComment}
           onChange={(element) => setNewComment(element.target.value)}
-          placeholder="Add comment here..."
+          placeholder=" Add comment here..."
           required
         />
         <button type="submit" disabled={isPosting}>
@@ -81,7 +81,7 @@ return (
         </button>
         </form>
         {confirmationMessage && <p className="confirmation-message">{confirmationMessage}</p>}
-        <h2>Comments</h2>
+        <h2 id="comments-header">Comments</h2>
         <ul className="comment-list">
         {comments.length > 0 ? (
           comments.map((comment) => (

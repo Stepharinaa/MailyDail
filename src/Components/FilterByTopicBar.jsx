@@ -18,7 +18,7 @@ useEffect(() => {
   }, []);
 
     return (
-        <div className="all-articles-bar">
+        <div className="topic-bar">
           <label htmlFor="topic-filter">Filter by Topic:</label>
           {isLoading ? (
         <p>Loading topics...</p>
