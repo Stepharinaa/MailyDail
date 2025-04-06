@@ -112,6 +112,16 @@ const fetchTopics = () => {
     });
 };
 
+const createTopic = (slug, description) => {
+  return api
+    .post("/topics", { slug, description })
+    .then(({ data }) => data.topic)
+    .catch((error) => {
+      console.error("Error posting topic:", error);
+      throw error;
+    });
+};
+
 const fetchArticlesByTopic = (
   sortBy = "created_at",
   order = "DESC",
@@ -140,5 +150,6 @@ export {
   deleteCommentByCommentID,
   fetchTop8Articles,
   fetchTopics,
+  createTopic,
   fetchArticlesByTopic,
 };
