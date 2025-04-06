@@ -92,9 +92,9 @@ const deleteCommentByCommentID = (comment_id) => {
   });
 };
 
-const fetchTop5Articles = () => {
+const fetchTop8Articles = () => {
   return api
-    .get("/articles?sort_by=votes&order=DESC&limit=5&page=1")
+    .get("/articles?sort_by=votes&order=DESC&limit=8&page=1")
     .then(({ data }) => data.articles)
     .catch((error) => {
       console.error("Error fetching articles:", error);
@@ -138,7 +138,7 @@ export {
   postCommentByArticleID,
   updateVotesByCommentID,
   deleteCommentByCommentID,
-  fetchTop5Articles,
+  fetchTop8Articles,
   fetchTopics,
   fetchArticlesByTopic,
 };

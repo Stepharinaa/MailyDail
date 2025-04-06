@@ -9,7 +9,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+/* body {
   margin: 0;
   padding: 0;
   min-width: 320px;
@@ -17,6 +17,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+} */
+
+body {
+  padding: 80px;
   width: 100%;
 }
 

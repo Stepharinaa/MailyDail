@@ -76,7 +76,7 @@
 
 .topics-container
 {
-  max-width: 800px;
+  width: 100%;
   max-height: 700px;
   margin: 0 auto; 
   padding: 0 20px;
@@ -120,8 +120,7 @@
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
   box-sizing: border-box;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 5px;
 }
 
 .header-title {
@@ -231,11 +230,6 @@
   border-top: 1px solid #eee;
   font-size: 0.9rem;
   color: #777;
-}
-
-.topics-container {
-  text-align: center;
-  padding: 20px;
 }
 
 .topics-grid {

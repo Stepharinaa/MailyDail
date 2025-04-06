@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import ArticleList from '../Components/ArticleList'
-import { fetchTop5Articles } from '../utils/api'
+import { fetchTop8Articles } from '../utils/api'
 import WelcomeMessage from '../Components/WelcomeMessage'
 import LoadingAnimation from '../Components/LoadingAnimation'
 
@@ -12,7 +12,7 @@ function HomePage(){
     useEffect(() => {
         setIsLoading(true)
         setError(null)
-        fetchTop5Articles()
+        fetchTop8Articles()
         .then((data) => {
             setArticles(data)
             setIsLoading(false)
