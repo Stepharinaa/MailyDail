@@ -3,8 +3,10 @@ import { Link } from "react-router-dom"
 import { fetchTopics } from "../utils/api"
 import topicPlaceholderImage from "../assets/topic-placeholder-image.jpg"
 import LoadingAnimation from "../Components/LoadingAnimation"
+import { useNavigate } from "react-router-dom"
 
 function AllTopicsPage() {
+  let navigate = useNavigate()
     const [topics, setTopics] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -34,6 +36,9 @@ function AllTopicsPage() {
     return (
         <section className="topics-container">
           <h1 className="header-title">Topics</h1>
+          <button id="post-topic-button" onClick={() => navigate("/topics/create")}>
+        ➕ Post a New Topic
+      </button>
           {topics.length === 0 ? (<p>No topics found.</p>) : (
             <div className="topics-grid">
               {topics.map((topic) => (
