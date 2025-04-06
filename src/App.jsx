@@ -37,6 +37,7 @@ function App() {
           <Route path="/articles/:article_id" element={<SingleArticlePage />} />
           <Route path="/topics" element={<AllTopicsPage />} />
           <Route path="/topics/:slug" element={<ArticlesByTopicPage />} />
+          <Route path="/topics/create" element={<CreateTopicPage />}/>
           <Route path="*" element={<InvalidPathPage />} />
         </Routes>
       </div>
