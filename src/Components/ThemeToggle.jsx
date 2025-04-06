@@ -1,7 +1,6 @@
 import React from "react";
 
 function ThemeToggle({ setDarkMode }) {
-  console.log(setDarkMode, "<--- this is setdarkmode");
   return (
     <button
       className="theme-toggle-button"
