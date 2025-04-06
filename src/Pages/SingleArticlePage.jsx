@@ -46,7 +46,7 @@ function SingleArticlePage() {
     <ArticleVotesButton articleID={article_id} currentVotes={article.votes} />
 
     <div className="single-article-comments-box">
-      <span className="single-article-comments-value">💬 {article.comment_count} Comments</span>
+      <span className="single-article-comments-value">✍️ {article.comment_count} Comments</span>
     </div>
   </div>
       <CommentSection articleId={article_id}/>

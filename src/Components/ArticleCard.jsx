@@ -14,7 +14,7 @@ function ArticleCard({ article }) {
           <p className="article-meta">Created: {timeAgo(article.created_at)}</p>
         <span className="article-author">Written by: {article.author}</span>
           <div className="comments-box">
-          <span className="comments-value">💬 {article.comment_count} Comments</span>
+          <span className="comments-value">✍️ {article.comment_count} Comments</span>
         </div>
       </div>
     </article>
