@@ -6,6 +6,7 @@ import SingleArticlePage from "./Pages/SingleArticlePage";
 import AllTopicsPage from "./Pages/AllTopicsPage";
 import ArticlesByTopicPage from "./Pages/ArticlesByTopicPage";
 import InvalidPathPage from "./Pages/InvalidPathPage";
+import CreateTopicPage from "./Pages/CreateTopicPage";
 
 import "./App.css"
 
@@ -35,9 +36,9 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/articles" element={<AllArticlesPage />} />
           <Route path="/articles/:article_id" element={<SingleArticlePage />} />
+          <Route path="/topics/create" element={<CreateTopicPage />}/>
           <Route path="/topics" element={<AllTopicsPage />} />
           <Route path="/topics/:slug" element={<ArticlesByTopicPage />} />
-          <Route path="/topics/create" element={<CreateTopicPage />}/>
           <Route path="*" element={<InvalidPathPage />} />
         </Routes>
       </div>
