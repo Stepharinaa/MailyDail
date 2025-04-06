@@ -48,7 +48,7 @@ const handleOrderChange = (newOrder) => {
 
 return (
     <section className="topic-articles-container">
-      <h1>Articles about {slug}</h1>
+      <h1 className="header-title">Articles about {slug}</h1>
       {error && <p className="error-message">{error}</p>}
       <SortByBox onSortChange={handleSortChange} onOrderChange={handleOrderChange}/>
       {articles.length === 0 ? (
