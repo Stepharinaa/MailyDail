@@ -8,7 +8,7 @@ import ThemeToggle from "./ThemeToggle";
 function Header({ darkMode, setDarkMode }) {
   return (
     <header className="header">
-      <ThemeToggle setDarkMode={setDarkMode}/>
+      <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode}/>
       
       <div className="logo-title">
       <Link to="/"><img 

@@ -1,13 +1,13 @@
 import React from "react";
 
-function ThemeToggle({ setDarkMode }) {
+function ThemeToggle({ darkMode, setDarkMode }) {
   return (
     <button
       className="theme-toggle-button"
       onClick={() => setDarkMode((prevMode) => !prevMode)} 
       title="Toggle theme"
     >
-      {setDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+      {darkMode ? "🌙 Dark Mode" : "☀️ Light Mode"}
     </button>
   );
 }
