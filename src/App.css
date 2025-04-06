@@ -408,16 +408,23 @@
 }
 
 .welcome-message h1 {
-  font-family: "Newsreader";
   font-weight: bold;
-  color: #333;
   font-size: 1.75rem;
 }
 
 .welcome-message p {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #555;
   font-size: 1rem;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+}
+
+.dark .filters-container {
+  background-color: black;
 }
 
 .sort-by-bar {
@@ -429,7 +436,6 @@
   padding: 10px;
   background-color:var(--colour-bg);
   border-radius: 8px;
-  margin-bottom: 20px;
 }
 
 #order-by {
@@ -464,7 +470,6 @@
   padding: 5px;
   background-color: var(--colour-bg);
   border-radius: 5px;
-  margin-bottom: 20px;
 }
 
 .topic-bar select {
@@ -476,7 +481,7 @@
 }
 
 .dark .topic-bar {
-  background-color: var(--colour-bg);
+  background-color: var(--color-bg);
   color: white;
 }
 
