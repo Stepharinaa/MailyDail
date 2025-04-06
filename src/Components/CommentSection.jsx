@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom"
 import { fetchCommentsByArticleID, postCommentByArticleID, deleteCommentByCommentID } from "../utils/api"
 import timeAgo from "../utils/formatTimeToNow";
 import CommentVotesButton from "./CommentVotesButton";
+import DeleteCommentButton from "./DeleteCommentButton";
 
 function CommentSection() {
   const {article_id} = useParams()
@@ -35,7 +36,8 @@ function CommentSection() {
         setIsPosting(true)
         postCommentByArticleID(article_id, { username: currentUser, body: newComment})
         .then((comment) => {
-            setComments((previousComments) => [comment, ...previousComments])
+          const commentWithAuthor = {...comment, author: currentUser};
+            setComments((previousComments) => [commentWithAuthor, ...previousComments])
             setNewComment("")
             setConfirmationMessage("Your message has been posted!")
         })
@@ -94,13 +96,10 @@ return (
                <CommentVotesButton commentID={comment.comment_id} currentVotes={comment.votes}/>
 
                {comment.author === currentUser && (
-                <button
-                  className="delete-button"
-                  onClick={() => handleDeleteComment(comment.comment_id)}
-                  disabled={isDeleting[comment.comment_id]}
-                >
-                  {isDeleting[comment.comment_id] ? "Deleting..." : "🗑️ Delete"}
-                </button>
+                <DeleteCommentButton
+                  onDelete={() => handleDeleteComment(comment.comment_id)} 
+                  isDeleting={isDeleting[comment.comment_id]} 
+                />
               )}  
 
             </li>
