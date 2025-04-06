@@ -112,9 +112,9 @@ const fetchTopics = () => {
     });
 };
 
-const createTopic = (slug, description) => {
+const createTopic = (topicObj) => {
   return api
-    .post("/topics", { slug, description })
+    .post("/topics", topicObj)
     .then(({ data }) => data.topic)
     .catch((error) => {
       console.error("Error posting topic:", error);
