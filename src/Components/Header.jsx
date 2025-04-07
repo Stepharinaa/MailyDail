@@ -10,14 +10,12 @@ function Header({ darkMode, setDarkMode }) {
     <header className="header">
       <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode}/>
       
-      <div className="logo-title">
       <Link to="/"><img 
       className="logo" 
       src={darkMode ? darkModeLogo : lightModeLogo} 
       alt="Maily Dail Logo" />
       </Link>
-      </div>
-      
+
       <nav className="navigation-links">
       <Link to="/articles">Articles</Link>
       <Link to="/topics">Topics</Link>
