@@ -1,37 +1,47 @@
-import { useState } from 'react';
+import { useState, useEffect } from "react";
 
-function SortByBox({ onSortChange, onOrderChange }) {
-  const [sortBy, setSortBy] = useState("created_at");
-  const [order, setOrder] = useState("DESC")
+function SortByBox({ sortBy, order, onSortAndOrderChange }) {
+  const [selectedOption, setSelectedOption] = useState(`${sortBy}-${order}`);
 
-  const handleSortChange = (event) => {
-    const selectedSort = event.target.value;
-    setSortBy(selectedSort);
-    onSortChange(selectedSort);
-  };
+  const options = [
+    { label: "Newest", value: "created_at-DESC" },
+    { label: "Oldest", value: "created_at-ASC" },
+    { label: "Most Liked", value: "votes-DESC" },
+    { label: "Least Liked", value: "votes-ASC" },
+    { label: "Most Commented", value: "comment_count-DESC" },
+    { label: "Least Commented", value: "comment_count-ASC" },
+  ];
 
-  const handleOrderChange = (event) => {
-    const selectedOrder = event.target.value;
-    setOrder(selectedOrder);
-    onOrderChange(selectedOrder);
+  useEffect(() => {
+    setSelectedOption(`${sortBy}-${order}`);
+  }, [sortBy, order]);
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    if (value === "") return;
+    const [newSortBy, newOrder] = event.target.value.split("-");
+    setSelectedOption(event.target.value);
+    onSortAndOrderChange(newSortBy, newOrder);
   };
 
   return (
     <div className="sort-by-bar">
-      <label htmlFor="sort-by">Sort by:</label>
-      <select id="sort-by" value={sortBy} onChange={handleSortChange}>
-        <option value="created_at">Date</option>
-        <option value="votes">Votes</option>
-        <option value="comment_count">Comments</option>
-      </select>
-
-      <label htmlFor="order-by">Order by:</label>
-      <select id="order-by" value={order} onChange={handleOrderChange}>
-      <option value="DESC">Descending ↓</option>
-      <option value="ASC">Ascending ↑</option>
+      <label htmlFor="sort-by" className="sr-only">
+        Sort by:
+      </label>
+      <select
+        id="sort-order-select"
+        value={selectedOption}
+        onChange={handleChange}
+      >
+        {options.map(({ label, value }) => (
+          <option key={value} value={value}>
+            {label}
+          </option>
+        ))}
       </select>
     </div>
-  )
+  );
 }
 
 export default SortByBox;
