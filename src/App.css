@@ -72,12 +72,12 @@ h1 {
 }
 
 .dark .create-topic-container {
-  background-color: var(--colour-fg);
+  background-color: var(--colour-bg);
 }
 
 .create-topic-container h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 18px;
   color: var(--colour-text);
   margin-bottom: 20px;
 }
@@ -87,6 +87,7 @@ h1 {
 }
 
 .create-topic-form {
+  font-size: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -99,6 +100,16 @@ h1 {
 
 .dark .create-topic-form label {
   color: var(--colour-text);
+}
+
+.dark #slug {
+  background-color: var(--colour-fg);
+  color: var(--color-text);
+}
+
+.dark #description {
+  background-color: var(--colour-fg);
+  color: var(--color-text);
 }
 
 #post-topic-button {
