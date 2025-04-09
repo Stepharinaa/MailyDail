@@ -35,8 +35,7 @@
   font-style: italic;
 }
 
-.topic-image,
-.logo {
+.topic-image {
   max-width: 100%;
   height: auto;
 }
@@ -55,7 +54,7 @@ h1 {
   width: 100%;
   max-height: 700px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 
 .article-card:hover {
@@ -145,25 +144,23 @@ h1 {
 .article-card {
   display: flex;
   flex-direction: column;
-  /* align-items: flex-start; */
   border: 1px solid #ddd;
-  border-radius: 0.75rem;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   background-color: var(--colour-bg);
-  padding: 1rem;
+  padding: 16px;
   flex-wrap: wrap;
   width: 100%;
   height: auto;
 }
 
 .article-img {
+  margin-top: 10px;
   width: 100%;
   height: auto;
   object-fit: cover;
-  /* display: block; */
-  /* object-position: center center; */
   border-radius: 0.5rem;
 }
 
@@ -183,17 +180,22 @@ h1 {
 }
 
 .header-title {
-  margin-top: 20px;
+  margin-top: 5px;
   vertical-align: baseline;
   padding: 10px 0px;
+  font-size: 20px;
+}
+
+#all-articles-header-title {
+  padding: 30px 0px;
+  justify-self: center;
 }
 
 .logo {
   width: auto;
-  height: 150px;
+  height: 100px;
   object-fit: fill;
   display: block;
-  order: 1;
 }
 
 .logo:hover {
@@ -206,16 +208,16 @@ h1 {
 .article-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: var(--spacing-gap);
   margin: 0 auto;
 }
 
 .article-title {
-  font-family: "Gill Sans";
-  font-size: 1.5rem;
+  font-size: 20px;
   font-weight: bold;
   color: black;
   text-decoration: none;
+  margin-bottom: 5px;
 }
 
 .article-title a {
@@ -262,19 +264,17 @@ h1 {
 }
 
 .article-author {
-  font-family: Gill Sans;
-  font-weight: normal;
-  font-size: 1rem;
+  font-size: 14px;
   font-style: italic;
   color: #555;
-  margin-bottom: 0.5rem;
+  margin-top: 5px;
 }
 
 .article-meta {
   font-weight: bold;
   margin-top: 0;
-  margin-bottom: 0.3rem;
-  font-size: 0.875rem;
+  margin-bottom: -5px;
+  font-size: 14px;
   color: black;
   text-decoration: none;
 }
@@ -341,6 +341,7 @@ h1 {
   color: black;
   margin-bottom: 8px;
   margin-top: 8px;
+  align-self: center;
 }
 
 .topic-title:hover {
@@ -362,12 +363,11 @@ h1 {
   display: flex;
   align-items: center;
   gap: 5px;
-  width: 150px;
+  width: fit-content;
 }
 
 .comments-value {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 1rem;
+  font-size: 12px;
   color: white;
   justify-content: center;
   white-space: nowrap;
@@ -462,8 +462,8 @@ h1 {
 .navigation-links {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  gap: 5px;
+  flex-direction: row;
+  gap: 10px;
   text-align: center;
 }
 
@@ -481,32 +481,36 @@ h1 {
 .welcome-message {
   display: none;
   text-align: center;
-  font-size: 1rem;
-  padding: 20px;
   background-color: var(--colour-bg);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
+  margin: auto;
   width: 80%;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .welcome-message h1 {
-  font-weight: bold;
-  font-size: 1.75rem;
+  font-size: 25px;
 }
 
 .welcome-message p {
-  font-size: 1rem;
+  font-size: 15px;
+}
+
+.articles-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 .filters-container {
-  border-radius: 5px;
+  border-radius: 12px;
   background-color: var(--colour-light-grey);
   display: flex;
   justify-content: flex-start;
-  gap: 20px;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .dark .filters-container {
@@ -514,41 +518,38 @@ h1 {
 }
 
 .sort-by-bar {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
   display: flex;
   gap: 10px;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
   background-color: var(--colour-light-grey);
   border-radius: 8px;
+  flex-direction: column;
+  margin: 8px;
+  font-size: 14px;
 }
 
-#order-by {
-  font-size: 1rem;
+#sort-order-select {
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #ddd;
+  font-size: 14px;
 }
 
-#sort-by {
-  font-size: 1rem;
+#topic-filter {
   padding: 5px;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  font-size: 14px;
 }
-
 .sort-by-bar select {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ddd;
-  margin-right: 20px;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 .topic-bar {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
   display: flex;
   gap: 10px;
@@ -556,14 +557,15 @@ h1 {
   padding: 5px;
   background-color: var(--colour-light-grey);
   border-radius: 5px;
+  width: fit-content;
+  margin: 8px;
 }
 
 .topic-bar select {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ddd;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 .dark .topic-bar {
@@ -604,7 +606,6 @@ h1 {
 }
 
 .article-body {
-  font-family: "Gill Sans";
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--colour-text);
@@ -612,7 +613,6 @@ h1 {
 }
 
 .comment-header {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -761,17 +761,20 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100%;
+  height: 80%;
   background-color: transparent;
 }
 
 #invalid-path-loading-container {
   display: flex;
   justify-content: center;
-  height: 80%;
-  width: 80%;
   align-items: center;
+}
+
+#invalid-path-animation {
+  justify-content: center;
+  width: 30vw;
+  height: 30vh;
 }
 
 .dark {
@@ -914,6 +917,7 @@ h1 {
   --colour-accent: #007bff;
   --colour-grey: #444;
   --colour-light-grey: #d3d3d3;
+  --spacing-gap: 16px;
 }
 
 .dark {
@@ -923,11 +927,26 @@ h1 {
   --colour-primary: #333;
   --colour-accent: #007bff;
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 @media screen and (min-width: 640px) {
   .header {
     flex-direction: row;
     justify-content: space-between;
+  }
+  .header-title {
+    font-size: 25px;
+    padding: 20px;
   }
   .navigation-links {
     flex-direction: row;
@@ -936,15 +955,49 @@ h1 {
   .welcome-message {
     display: block;
   }
+  .filters-container {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin: auto;
+    justify-content: flex-start;
+  }
+  .sort-by-bar {
+    flex-direction: row;
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+  .filters-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10px;
+    margin: auto;
+  }
+  .sort-by-bar {
+    flex-direction: row;
+  }
   .article-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .comments-value {
+    font-size: 14px;
   }
 }
 
 @media screen and (min-width: 1024px) {
+  .logo {
+    width: 250px;
+    height: auto;
+  }
+  .welcome-message {
+    padding: 30px;
+  }
   .article-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -957,5 +1010,53 @@ h1 {
     grid-column: span 3;
     flex-direction: row;
     flex-wrap: nowrap;
+  }
+  .sort-by-bar {
+    flex-direction: row;
+  }
+  .header-title {
+    padding: 20px;
+    font-size: 25px;
+  }
+  .navigation-links {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .logo {
+    width: 300px;
+    height: auto;
+  }
+  .navigation-links {
+    font-size: 25px;
+  }
+  .header-title {
+    font-size: 30px;
+  }
+  .welcome-message h1 {
+    font-size: 30px;
+  }
+  .welcome-message p {
+    font-size: 16px;
+  }
+  .article-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .article-title {
+    font-size: 22px;
+  }
+  .article-meta {
+    font-size: 18px;
+  }
+  .article-author {
+    font-size: 16px;
+  }
+  .comments-value {
+    font-size: 16px;
+  }
+  .articles-section {
+    max-width: 1400px;
+    margin: 0 auto;
   }
 }
