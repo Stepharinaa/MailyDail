@@ -780,14 +780,22 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: scale(0.6);
 }
 
 #invalid-path-animation {
-  justify-content: center;
-  width: 30vw;
-  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-
+#invalid-path-animation h1 {
+  margin-top: 50px;
+  margin-bottom: -130px;
+}
+#invalid-path-animation p {
+  margin-top: -180px;
+}
 .dark {
   background-color: var(--colour-bg);
   color: var(--colour-bg);
@@ -857,7 +865,6 @@ h1 {
 .dark .welcome-message h1,
 .dark .welcome-message p {
   font-weight: bold;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: #121212;
   color: #ffffff;
 }
@@ -976,6 +983,22 @@ h1 {
   .sort-by-bar {
     flex-direction: row;
   }
+  .create-topic-container h1 {
+    font-size: 20px;
+  }
+  .create-topic-form label {
+    font-size: 15px;
+  }
+  .create-topic-container {
+    padding: 20px 50px;
+  }
+  #slug,
+  #description {
+    font-size: 12px;
+  }
+  .create-topic-form input[type="submit"] {
+    font-size: 15px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -998,6 +1021,9 @@ h1 {
   }
   .comments-value {
     font-size: 14px;
+  }
+  .create-topic-container h1 {
+    font-size: 25px;
   }
 }
 
@@ -1031,6 +1057,9 @@ h1 {
   }
   .navigation-links {
     font-size: 20px;
+  }
+  .create-topic-container h1 {
+    font-size: 25px;
   }
 }
 
@@ -1069,5 +1098,15 @@ h1 {
   .articles-section {
     max-width: 1400px;
     margin: 0 auto;
+  }
+  .create-topic-container h1 {
+    font-size: 30px;
+  }
+  .create-topic-form label {
+    font-size: 20px;
+  }
+  #slug,
+  #description {
+    font-size: 15px;
   }
 }
