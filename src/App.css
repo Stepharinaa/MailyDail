@@ -790,11 +790,11 @@ h1 {
   text-align: center;
 }
 #invalid-path-animation h1 {
+  display: flex;
   margin-top: 50px;
-  margin-bottom: -130px;
 }
 #invalid-path-animation p {
-  margin-top: -180px;
+  display: flex;
 }
 .dark {
   background-color: var(--colour-bg);
