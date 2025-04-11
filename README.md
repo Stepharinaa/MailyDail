@@ -15,7 +15,9 @@ The application is fully responsive and works well on both desktop and mobile de
 
 ## Features:
 
-- Browse articles by different topics (including filter functionality).
+- Browse articles by different topics (including filter and sort by functionality).
+
+- Post a new topic.
 
 - Sort articles based on date or votes.
 
@@ -37,7 +39,7 @@ The application is fully responsive and works well on both desktop and mobile de
 
 4. Sort articles or filter them by topic to find what interests you.
 
-5. Vote and comment to interact with the content (_currently, users are hardcoded to have username of grumpy19. I am planning to add some form of authentication in the near future_).
+5. Vote and comment to interact with the content (_users are hardcoded to have username of grumpy19. I am planning to add some form of authentication in the near future_).
 
 6. Delete comment(s) as you see fit.
 
