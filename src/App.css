@@ -974,6 +974,50 @@ h1 {
   transform: scale(0.97);
 }
 
+.profile-page {
+  margin: 20px;
+  background-color: var(--color-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-page h1 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.profile-page p {
+  font-size: 15px;
+  margin: 5px 0;
+}
+
+#user-image {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 30vw;
+  max-width: 150px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 3px solid #ccc;
+  transition: transform 0.3s ease;
+  align-self: center;
+}
+
+.user-image:hover {
+  transform: scale(1.05);
+}
+
+.dark .profile-page {
+  --background: #1e1e1e;
+  --text: #ffffff;
+  border: 1px solid #333;
+}
+
 :root {
   --colour-bg: #ffffff;
   --colour-text: #000000;
@@ -1084,6 +1128,15 @@ h1 {
   }
   .create-topic-container h1 {
     font-size: 25px;
+  }
+  .profile-page h1 {
+    font-size: 25px;
+    margin-top: 20px;
+  }
+
+  .profile-page p {
+    font-size: 20px;
+    margin: 5px 0;
   }
 }
 
