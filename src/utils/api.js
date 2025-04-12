@@ -140,6 +140,16 @@ const fetchArticlesByTopic = (
     });
 };
 
+const getUsername = () => {
+  return api
+    .get("/users/grumpy19")
+    .then(({ data }) => data.user)
+    .catch((error) => {
+      console.error("Error fetching user details:", error);
+      throw error;
+    });
+};
+
 export {
   fetchArticles,
   fetchSingleArticle,
@@ -152,4 +162,5 @@ export {
   fetchTopics,
   createTopic,
   fetchArticlesByTopic,
+  getUsername,
 };
