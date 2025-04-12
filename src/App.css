@@ -498,6 +498,7 @@ h1 {
 .error-message {
   font-weight: bold;
   color: red;
+  align-self: center;
 }
 
 .confirmation-message {
@@ -1101,6 +1102,9 @@ h1 {
     display: flex;
     font-size: 30px;
   }
+  .error-message {
+    font-size: 15px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -1137,10 +1141,12 @@ h1 {
     font-size: 25px;
     margin-top: 20px;
   }
-
   .profile-page p {
     font-size: 20px;
     margin: 5px 0;
+  }
+  .error-message {
+    font-size: 15px;
   }
 }
 
@@ -1189,6 +1195,9 @@ h1 {
   #post-topic-button {
     font-size: 15px;
   }
+  .error-message {
+    font-size: 15px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -1196,8 +1205,8 @@ h1 {
     width: 300px;
     height: auto;
   }
-  .navigation-links {
-    font-size: 25px;
+  .navigation-links a {
+    font-size: 20px;
   }
   .theme-toggle-button {
     font-size: 15px;
@@ -1244,6 +1253,9 @@ h1 {
     font-size: 14px;
   }
   #post-topic-button {
+    font-size: 18px;
+  }
+  .error-message {
     font-size: 18px;
   }
 }

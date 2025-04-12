@@ -41,7 +41,6 @@ function CreateTopicPage() {
     <div className="create-topic-container">
       <h1>📝 Create a New Topic</h1>
       <form onSubmit={handleSubmit} className="create-topic-form">
-        {error && <p className="error-message">{error}</p>}
         {success && (
           <p className="success-message">
             Topic successfully created! Redirecting...
@@ -67,6 +66,7 @@ function CreateTopicPage() {
             onChange={handleChange}
           />
         </label>
+        {error && <p className="error-message">{error}</p>}
         <input type="submit" />
       </form>
     </div>
