@@ -8,9 +8,10 @@ import ArticlesByTopicPage from "./Pages/ArticlesByTopicPage";
 import InvalidPathPage from "./Pages/InvalidPathPage";
 import CreateTopicPage from "./Pages/CreateTopicPage";
 
-import "./App.css"
+import "./App.css";
 
-import AllArticlesPage from "./Pages/AllArticlesPage"
+import AllArticlesPage from "./Pages/AllArticlesPage";
+import ProfilePage from "./Pages/ProfilePage";
 
 function App() {
   const [darkMode, setDarkMode] = useState(
@@ -30,19 +31,20 @@ function App() {
   }, [darkMode]);
 
   return (
-      <div>
-        <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/articles" element={<AllArticlesPage />} />
-          <Route path="/articles/:article_id" element={<SingleArticlePage />} />
-          <Route path="/topics/create" element={<CreateTopicPage />}/>
-          <Route path="/topics" element={<AllTopicsPage />} />
-          <Route path="/topics/:slug" element={<ArticlesByTopicPage />} />
-          <Route path="*" element={<InvalidPathPage />} />
-        </Routes>
-      </div>
-  )
+    <div>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/articles" element={<AllArticlesPage />} />
+        <Route path="/articles/:article_id" element={<SingleArticlePage />} />
+        <Route path="/topics/create" element={<CreateTopicPage />} />
+        <Route path="/topics" element={<AllTopicsPage />} />
+        <Route path="/topics/:slug" element={<ArticlesByTopicPage />} />
+        <Route path="/profile/grumpy19" element={<ProfilePage />} />
+        <Route path="*" element={<InvalidPathPage />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
