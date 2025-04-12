@@ -47,7 +47,7 @@
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 30px;
 }
 
 .topics-container {
@@ -113,12 +113,13 @@ h1 {
 }
 
 #post-topic-button {
-  background-color: #0b6623;
+  background-color: var(--colour-primary);
+  color: white;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #post-topic-button:hover {
-  background-color: #043927;
+  background-color: var(--colour-accent);
   transform: scale(1.05);
 }
 
@@ -414,6 +415,7 @@ h1 {
   align-items: center;
   gap: 5px;
   width: fit-content;
+  font-size: 12px;
 }
 
 .votes-value :hover {
@@ -574,7 +576,6 @@ h1 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
   gap: 5px;
 }
 
@@ -1126,6 +1127,9 @@ h1 {
   .comments-value {
     font-size: 14px;
   }
+  .votes-value {
+    font-size: 14px;
+  }
   .create-topic-container h1 {
     font-size: 25px;
   }
@@ -1168,7 +1172,6 @@ h1 {
     flex-direction: row;
   }
   .header-title {
-    padding: 20px;
     font-size: 25px;
   }
   .navigation-links {
@@ -1176,6 +1179,15 @@ h1 {
   }
   .create-topic-container h1 {
     font-size: 25px;
+  }
+  .comments-value {
+    font-size: 14px;
+  }
+  .votes-value {
+    font-size: 14px;
+  }
+  #post-topic-button {
+    font-size: 15px;
   }
 }
 
@@ -1211,9 +1223,6 @@ h1 {
   .article-author {
     font-size: 16px;
   }
-  .comments-value {
-    font-size: 16px;
-  }
   .articles-section {
     max-width: 1400px;
     margin: 0 auto;
@@ -1227,5 +1236,14 @@ h1 {
   #slug,
   #description {
     font-size: 15px;
+  }
+  .comments-value {
+    font-size: 14px;
+  }
+  .votes-value {
+    font-size: 14px;
+  }
+  #post-topic-button {
+    font-size: 18px;
   }
 }
