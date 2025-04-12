@@ -17,12 +17,19 @@ function ArticleCard({ article }) {
         <p className="article-meta">Topic: {article.topic}</p>
         <p className="article-meta">Created: {timeAgo(article.created_at)}</p>
         <span className="article-author">Written by: {article.author}</span>
-        <div className="comments-box">
-          <span className="comments-value">
+        <div className="votes-and-comments-row">
+          <span className="votes-value">
             <Link to={`/articles/${article.article_id}`}>
-              ✍️ {article.comment_count} Comments
+              👍 {article.votes} Votes
             </Link>
           </span>
+          <div className="comments-container">
+            <span className="comments-value">
+              <Link to={`/articles/${article.article_id}`}>
+                💭 {article.comment_count} Comments
+              </Link>
+            </span>
+          </div>
         </div>
       </div>
     </article>
