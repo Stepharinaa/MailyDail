@@ -7,6 +7,7 @@ import AllTopicsPage from "./Pages/AllTopicsPage";
 import ArticlesByTopicPage from "./Pages/ArticlesByTopicPage";
 import InvalidPathPage from "./Pages/InvalidPathPage";
 import CreateTopicPage from "./Pages/CreateTopicPage";
+import CreateArticlePage from "./Pages/CreateArticlePage";
 
 import "./App.css";
 
@@ -35,6 +36,7 @@ function App() {
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/articles/create" element={<CreateArticlePage />} />
         <Route path="/articles" element={<AllArticlesPage />} />
         <Route path="/articles/:article_id" element={<SingleArticlePage />} />
         <Route path="/topics/create" element={<CreateTopicPage />} />
