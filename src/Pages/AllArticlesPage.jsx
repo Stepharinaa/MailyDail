@@ -5,8 +5,10 @@ import { fetchArticles } from "../utils/api";
 import SortByBox from "../Components/SortByBox";
 import FilterByTopicBar from "../Components/FilterByTopicBar";
 import LoadingAnimation from "../Components/LoadingAnimation";
+import { useNavigate } from "react-router-dom";
 
 function AllArticlesPage() {
+  let navigate = useNavigate();
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -73,6 +75,12 @@ function AllArticlesPage() {
   return (
     <main>
       <h1 id="all-articles-header-title">All Articles</h1>
+      <button
+        id="post-article-button"
+        onClick={() => navigate("/articles/create")}
+      >
+        ➕ Post a New Article
+      </button>
       <div className="articles-wrapper">
         <div className="filters-container">
           <FilterByTopicBar topic={topic} setTopic={handleTopicChange} />
