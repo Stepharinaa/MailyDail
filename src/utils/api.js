@@ -55,6 +55,16 @@ const updateVotesOnArticle = (article_id, voteChange) => {
     });
 };
 
+const createArticle = (articleObj) => {
+  return api
+    .post("/articles", articleObj)
+    .then(({ data }) => data.topic)
+    .catch((error) => {
+      console.error("Error posting article:", error);
+      throw error;
+    });
+};
+
 const fetchCommentsByArticleID = (article_id) => {
   return api
     .get(`/articles/${article_id}/comments`)
@@ -154,6 +164,7 @@ export {
   fetchArticles,
   fetchSingleArticle,
   updateVotesOnArticle,
+  createArticle,
   fetchCommentsByArticleID,
   postCommentByArticleID,
   updateVotesByCommentID,
