@@ -623,7 +623,7 @@ h1 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin: auto;
   width: 80%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .welcome-message h1 {
@@ -984,11 +984,15 @@ h1 {
 }
 
 .dark .welcome-message,
-.dark .welcome-message h1,
-.dark .welcome-message p {
+.dark .welcome-message h1 {
   font-weight: bold;
   background-color: #121212;
   color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.dark .welcome-message p {
+  margin-bottom: 20px;
 }
 
 .dark .sort-by-bar {
@@ -1192,7 +1196,6 @@ h1 {
     flex-direction: row;
   }
   .all-articles-section {
-    max-width: 700px;
     margin: 0 auto;
   }
   .article-grid {
@@ -1245,7 +1248,6 @@ h1 {
   }
   .all-articles-section {
     display: flex;
-    max-width: 1000px;
     margin: 0 auto;
   }
   .article-grid {
@@ -1260,6 +1262,10 @@ h1 {
     grid-column: span 3;
     flex-direction: row;
     flex-wrap: nowrap;
+  }
+  .article-grid .article-img:nth-child(1),
+  .article-grid .article-img:nth-child(5n) {
+    max-width: 500px;
   }
   .sort-by-bar {
     flex-direction: row;
@@ -1311,6 +1317,9 @@ h1 {
   .welcome-message p {
     font-size: 16px;
   }
+  .all-articles-section {
+    min-width: 900px;
+  }
   .article-grid {
     grid-template-columns: repeat(3, 1fr);
     flex-wrap: nowrap;
@@ -1327,8 +1336,6 @@ h1 {
   .all-articles-section {
     display: flex;
     align-content: center;
-  }
-  .all-articles-section {
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -1363,11 +1370,19 @@ h1 {
   .all-articles-section {
     max-width: 1500px;
   }
+  .topics-container {
+    max-width: 1150px;
+  }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1536px) {
   .all-articles-section {
+    min-width: 1200px;
+  }
+  .articles-section {
+    min-width: 1200px;
+  }
+  .topics-container {
     max-width: 1200px;
-    margin: 0 auto;
   }
 }

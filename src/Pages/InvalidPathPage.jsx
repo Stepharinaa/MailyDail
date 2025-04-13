@@ -1,10 +1,18 @@
-import InvalidPathAnimation from "../Components/InvalidPathAnimation";
+import { Suspense, lazy } from "react";
+
+const InvalidPathAnimation = lazy(() =>
+  import("../Components/InvalidPathAnimation")
+);
 
 function InvalidPathPage() {
   return (
     <div id="invalid-path-animation">
       <h1>404 - Page Not Found!</h1>
-      <InvalidPathAnimation />
+
+      <Suspense fallback={<p>Loading animation...</p>}>
+        <InvalidPathAnimation />
+      </Suspense>
+
       <p>We couldn't find the page you were looking for.</p>
     </div>
   );
