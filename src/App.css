@@ -48,8 +48,14 @@
 
 h1 {
   font-size: 25px;
-  padding-top: 20px;
   padding-bottom: 10px;
+}
+
+.header-row {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .all-articles-section {
@@ -1231,6 +1237,12 @@ h1 {
   .welcome-message {
     padding: 30px;
   }
+  .header-row {
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   .all-articles-section {
     display: flex;
     max-width: 1000px;
@@ -1251,9 +1263,6 @@ h1 {
   }
   .sort-by-bar {
     flex-direction: row;
-  }
-  .header-title {
-    font-size: 25px;
   }
   .navigation-links {
     font-size: 20px;
