@@ -62,6 +62,90 @@ h1 {
   transition: transform 0.2s ease-in-out;
 }
 
+#post-article-button {
+  background-color: var(--colour-primary);
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 10px;
+  height: 45px;
+  font-size: 15px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+#post-article-button:hover {
+  background-color: var(--colour-accent);
+  transform: scale(1.05);
+}
+
+.create-article-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--color-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.create-article-container h1 {
+  text-align: center;
+  font-size: 20px;
+  color: var(--colour-text);
+  margin-bottom: 20px;
+}
+
+.create-article-form {
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-article-form label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.dark .create-article-form label {
+  color: var(--colour-text);
+}
+
+.dark #title,
+.dark #body,
+.dark #topic {
+  background-color: var(--colour-fg);
+  color: var(--color-text);
+}
+
+.create-article-form input[type="text"],
+.create-article-form textarea,
+.create-article-form select {
+  font-family: sans-serif;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#create-article-button {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: var(--colour-primary);
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 10px;
+  height: 31px;
+  font-size: 15px;
+}
+
+#create-article-button:hover {
+  background-color: var(--colour-accent);
+  transform: scale(1.05);
+}
+
 .create-topic-container {
   max-width: 600px;
   margin: 20px auto;
@@ -71,13 +155,9 @@ h1 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.dark .create-topic-container {
-  background-color: var(--colour-bg);
-}
-
 .create-topic-container h1 {
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   color: var(--colour-text);
   margin-bottom: 20px;
 }
@@ -87,7 +167,7 @@ h1 {
 }
 
 .create-topic-form {
-  font-size: 10px;
+  font-size: 12px;
   display: flex;
   flex-direction: column;
 }
@@ -99,6 +179,9 @@ h1 {
 }
 
 .dark .create-topic-form label {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 8px;
   color: var(--colour-text);
 }
 
@@ -116,6 +199,9 @@ h1 {
   background-color: var(--colour-primary);
   color: white;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 10px;
+  height: 45px;
+  font-size: 15px;
 }
 
 #post-topic-button:hover {
@@ -123,29 +209,26 @@ h1 {
   transform: scale(1.05);
 }
 
-.create-topic-form input[type="text"] {
+.create-topic-form input[type="text"],
+.create-topic-form textarea,
+.create-topic-form select {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1em;
+  font-size: 16px;
   width: 100%;
   box-sizing: border-box;
 }
 
-.create-topic-form input[type="text"]:focus {
-  outline: none;
-  border-color: #007bff;
-}
-
 .create-topic-form input[type="submit"] {
   padding: 12px 20px;
-  background-color: #007bff;
+  background-color: var(--colour-primary);
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 16px;
   transition: background-color 0.3s ease;
 }
 
@@ -572,7 +655,8 @@ h1 {
 }
 
 .filters-container {
-  border-radius: 12px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   background-color: var(--colour-light-grey);
   display: flex;
   justify-content: flex-start;
@@ -1137,6 +1221,9 @@ h1 {
   .create-topic-container h1 {
     font-size: 25px;
   }
+  .create-article-container h1 {
+    font-size: 25px;
+  }
   .profile-page h1 {
     font-size: 25px;
     margin-top: 20px;
@@ -1185,6 +1272,12 @@ h1 {
   }
   .create-topic-container h1 {
     font-size: 25px;
+  }
+  .create-article-container h1 {
+    font-size: 25px;
+  }
+  #post-topic-button {
+    font-size: 20px;
   }
   .comments-value {
     font-size: 14px;
@@ -1235,6 +1328,12 @@ h1 {
   .articles-section {
     max-width: 1400px;
     margin: 0 auto;
+  }
+  .create-article-container h1 {
+    font-size: 30px;
+  }
+  .create-article-form label {
+    font-size: 20px;
   }
   .create-topic-container h1 {
     font-size: 30px;
