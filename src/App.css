@@ -48,14 +48,21 @@
 
 h1 {
   font-size: 25px;
-  padding-top: 20px;
   padding-bottom: 10px;
+}
+
+.header-row {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .all-articles-section {
   display: flex;
   flex-direction: column;
   padding: 10px 10px;
+  width: fit-content;
 }
 
 .topics-container {
@@ -1184,6 +1191,10 @@ h1 {
   .sort-by-bar {
     flex-direction: row;
   }
+  .all-articles-section {
+    max-width: 700px;
+    margin: 0 auto;
+  }
   .article-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1226,11 +1237,22 @@ h1 {
   .welcome-message {
     padding: 30px;
   }
+  .header-row {
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .all-articles-section {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
   .article-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
   .articles-section {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
   }
   .article-grid .article-card:nth-child(1),
@@ -1241,9 +1263,6 @@ h1 {
   }
   .sort-by-bar {
     flex-direction: row;
-  }
-  .header-title {
-    font-size: 25px;
   }
   .navigation-links {
     font-size: 20px;
@@ -1309,8 +1328,8 @@ h1 {
     display: flex;
     align-content: center;
   }
-  .articles-section {
-    max-width: 1400px;
+  .all-articles-section {
+    max-width: 1200px;
     margin: 0 auto;
   }
   .create-article-container h1 {
@@ -1340,5 +1359,15 @@ h1 {
   }
   .error-message {
     font-size: 18px;
+  }
+  .all-articles-section {
+    max-width: 1500px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .all-articles-section {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }

@@ -75,11 +75,15 @@ function AllArticlesPage() {
   return (
     <main>
       <div className="all-articles-section">
-        <h1>All Articles</h1>
-        <button id="post-button" onClick={() => navigate("/articles/create")}>
-          ➕ Post a New Article
-        </button>
+        <div className="header-row">
+          <h1>All Articles</h1>
+          <button id="post-button" onClick={() => navigate("/articles/create")}>
+            ➕ Post a New Article
+          </button>
+        </div>
+
         <div className="articles-wrapper"></div>
+
         <div className="filters-container">
           <FilterByTopicBar topic={topic} setTopic={handleTopicChange} />
           <SortByBox

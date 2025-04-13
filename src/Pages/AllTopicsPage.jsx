@@ -35,10 +35,12 @@ function AllTopicsPage() {
 
   return (
     <section className="topics-container">
-      <h1 className="header-title">Topics</h1>
-      <button id="post-button" onClick={() => navigate("/topics/create")}>
-        ➕ Post a New Topic
-      </button>
+      <div className="header-row">
+        <h1>Topics</h1>
+        <button id="post-button" onClick={() => navigate("/topics/create")}>
+          ➕ Post a New Topic
+        </button>
+      </div>
       {topics.length === 0 ? (
         <p>No topics found.</p>
       ) : (
