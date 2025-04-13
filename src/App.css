@@ -47,7 +47,15 @@
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 25px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.all-articles-section {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
 }
 
 .topics-container {
@@ -60,22 +68,6 @@ h1 {
 .article-card:hover {
   transform: scale(1.01);
   transition: transform 0.2s ease-in-out;
-}
-
-#post-article-button {
-  background-color: var(--colour-primary);
-  color: white;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  border-radius: 10px;
-  height: 45px;
-  font-size: 15px;
-  margin-left: 20px;
-  margin-bottom: 20px;
-}
-
-#post-article-button:hover {
-  background-color: var(--colour-accent);
-  transform: scale(1.05);
 }
 
 .create-article-container {
@@ -195,7 +187,7 @@ h1 {
   color: var(--color-text);
 }
 
-#post-topic-button {
+#post-button {
   background-color: var(--colour-primary);
   color: white;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -204,7 +196,7 @@ h1 {
   font-size: 15px;
 }
 
-#post-topic-button:hover {
+#post-button:hover {
   background-color: var(--colour-accent);
   transform: scale(1.05);
 }
@@ -272,18 +264,6 @@ h1 {
   box-sizing: border-box;
   border-radius: 5px;
   gap: 8px;
-}
-
-.header-title {
-  margin-top: 5px;
-  vertical-align: baseline;
-  padding: 10px 0px;
-  font-size: 20px;
-}
-
-#all-articles-header-title {
-  padding: 30px 0px;
-  justify-self: center;
 }
 
 .logo {
@@ -446,8 +426,7 @@ h1 {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 10px;
 }
 
 .comments-container {
@@ -662,6 +641,8 @@ h1 {
   justify-content: flex-start;
   align-items: center;
   gap: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .dark .filters-container {
@@ -682,6 +663,7 @@ h1 {
 }
 
 #sort-order-select {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -689,6 +671,7 @@ h1 {
 }
 
 #topic-filter {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding: 5px;
   border-radius: 5px;
   font-size: 14px;
@@ -1138,10 +1121,6 @@ h1 {
     flex-direction: row;
     justify-content: space-between;
   }
-  .header-title {
-    font-size: 25px;
-    padding: 20px;
-  }
   .navigation-links {
     flex-direction: row;
     gap: 15px;
@@ -1155,8 +1134,6 @@ h1 {
   .filters-container {
     display: flex;
     flex-direction: row;
-    padding: 10px;
-    margin: auto;
     justify-content: flex-start;
   }
   .sort-by-bar {
@@ -1203,8 +1180,6 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding: 10px;
-    margin: auto;
   }
   .sort-by-bar {
     flex-direction: row;
@@ -1238,6 +1213,9 @@ h1 {
 }
 
 @media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 30px;
+  }
   .logo {
     width: 250px;
     height: auto;
@@ -1276,8 +1254,9 @@ h1 {
   .create-article-container h1 {
     font-size: 25px;
   }
-  #post-topic-button {
+  #post-button {
     font-size: 20px;
+    width: fit-content;
   }
   .comments-value {
     font-size: 14px;
@@ -1285,7 +1264,7 @@ h1 {
   .votes-value {
     font-size: 14px;
   }
-  #post-topic-button {
+  #post-button {
     font-size: 15px;
   }
   .error-message {
@@ -1315,6 +1294,7 @@ h1 {
   }
   .article-grid {
     grid-template-columns: repeat(3, 1fr);
+    flex-wrap: nowrap;
   }
   .article-title {
     font-size: 22px;
@@ -1324,6 +1304,10 @@ h1 {
   }
   .article-author {
     font-size: 16px;
+  }
+  .all-articles-section {
+    display: flex;
+    align-content: center;
   }
   .articles-section {
     max-width: 1400px;
@@ -1351,7 +1335,7 @@ h1 {
   .votes-value {
     font-size: 14px;
   }
-  #post-topic-button {
+  #post-button {
     font-size: 18px;
   }
   .error-message {

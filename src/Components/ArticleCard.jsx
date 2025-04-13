@@ -20,13 +20,13 @@ function ArticleCard({ article }) {
         <div className="votes-and-comments-row">
           <span className="votes-value">
             <Link to={`/articles/${article.article_id}`}>
-              👍 {article.votes} Votes
+              👍 {article.votes}
             </Link>
           </span>
           <div className="comments-container">
             <span className="comments-value">
               <Link to={`/articles/${article.article_id}`}>
-                💭 {article.comment_count} Comments
+                💭 {article.comment_count}
               </Link>
             </span>
           </div>
