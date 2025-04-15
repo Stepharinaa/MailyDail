@@ -76,21 +76,32 @@ function AllArticlesPage() {
   };
 
   if (isLoading) return <LoadingAnimation />;
-  if (error) return <p className="error-message">{error}</p>;
+  if (error)
+    return (
+      <p role="alert" className="error-message">
+        {error}
+      </p>
+    );
 
   return (
-    <main>
+    <main role="main" aria-labelledby="all-articles-heading">
       <div className="all-articles-section">
-        <div className="header-row">
-          <h1>All Articles</h1>
-          <button id="post-button" onClick={() => navigate("/articles/create")}>
+        <header className="header-row">
+          <h1 id="all-articles-heading">All Articles</h1>
+          <button
+            id="post-button"
+            onClick={() => navigate("/articles/create")}
+            aria-label="Post a new article"
+          >
             ➕ Post a New Article
           </button>
-        </div>
+        </header>
 
-        <div className="articles-wrapper"></div>
-
-        <div className="filters-container">
+        <nav
+          className="filters-container"
+          role="navigation"
+          aria-label="Filter and sort articles"
+        >
           <Suspense fallback={<p>Loading sort options...</p>}>
             <FilterByTopicBar topic={topic} setTopic={handleTopicChange} />
           </Suspense>
@@ -102,9 +113,13 @@ function AllArticlesPage() {
               onSortAndOrderChange={handleSortAndOrderChange}
             />
           </Suspense>
-        </div>
+        </nav>
 
-        <section className="articles-section">
+        <section
+          className="articles-section"
+          aria-live="polite"
+          aria-label="Article results/display"
+        >
           {articles.length === 0 ? (
             <p>No articles found.</p>
           ) : (
@@ -113,17 +128,29 @@ function AllArticlesPage() {
         </section>
       </div>
 
-      <div className="pagination-controls">
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>
+      <nav
+        className="pagination-controls"
+        role="navigation"
+        aira-label="Pagination navigation"
+      >
+        <button
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+          aria-label="Previous page"
+        >
           Prev
         </button>
         <span>
           Page {currentPage} of {totalPages}
         </span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+        <button
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+          aria-label="Next page"
+        >
           Next
         </button>
-      </div>
+      </nav>
     </main>
   );
 }
