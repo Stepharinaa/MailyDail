@@ -119,6 +119,7 @@ function AllArticlesPage() {
           className="articles-section"
           aria-live="polite"
           aria-label="Article results/display"
+          role="list"
         >
           {articles.length === 0 ? (
             <p>No articles found.</p>
