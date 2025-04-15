@@ -1,9 +1,15 @@
+import React, { Suspense } from "react";
+
 import { useState, useEffect } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import ArticleList from "../Components/ArticleList";
 import { fetchArticles } from "../utils/api";
-import SortByBox from "../Components/SortByBox";
-import FilterByTopicBar from "../Components/FilterByTopicBar";
+
+const SortByBox = React.lazy(() => import("../Components/SortByBox"));
+const FilterByTopicBar = React.lazy(() =>
+  import("../Components/FilterByTopicBar")
+);
+
 import LoadingAnimation from "../Components/LoadingAnimation";
 import { useNavigate } from "react-router-dom";
 
@@ -85,12 +91,17 @@ function AllArticlesPage() {
         <div className="articles-wrapper"></div>
 
         <div className="filters-container">
-          <FilterByTopicBar topic={topic} setTopic={handleTopicChange} />
-          <SortByBox
-            sortBy={sortBy}
-            order={order}
-            onSortAndOrderChange={handleSortAndOrderChange}
-          />
+          <Suspense fallback={<p>Loading sort options...</p>}>
+            <FilterByTopicBar topic={topic} setTopic={handleTopicChange} />
+          </Suspense>
+
+          <Suspense fallback={<p>Loading sort options...</p>}>
+            <SortByBox
+              sortBy={sortBy}
+              order={order}
+              onSortAndOrderChange={handleSortAndOrderChange}
+            />
+          </Suspense>
         </div>
 
         <section className="articles-section">
