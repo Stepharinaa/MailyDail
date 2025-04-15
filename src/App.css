@@ -634,12 +634,6 @@ h1 {
   font-size: 15px;
 }
 
-.articles-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
 .filters-container {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
