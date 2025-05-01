@@ -35,7 +35,7 @@ function HomePage() {
     <main>
       <WelcomeMessage />
       <section className="articles-section">
-        <h1 className="header-title">Check out our most popular articles 👀</h1>
+        <h1 className="header-title">Our most popular articles 👀</h1>
         {articles.length === 0 ? (
           <p>No articles found.</p>
         ) : (
