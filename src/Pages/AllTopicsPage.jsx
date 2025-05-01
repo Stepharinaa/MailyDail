@@ -34,15 +34,23 @@ function AllTopicsPage() {
   if (error) return <p className="error-message">{error}</p>;
 
   return (
-    <section className="topics-container">
+    <section
+      className="topics-container"
+      role="region"
+      aria-labelledby="topics-heading"
+    >
       <div className="header-row">
-        <h1>Topics</h1>
-        <button id="post-button" onClick={() => navigate("/topics/create")}>
+        <h1 id="topics-heading">Topics</h1>
+        <button
+          id="post-button"
+          onClick={() => navigate("/topics/create")}
+          aria-label="Post a new topic"
+        >
           ➕ Post a New Topic
         </button>
       </div>
       {topics.length === 0 ? (
-        <p>No topics found.</p>
+        <p role="status">No topics found.</p>
       ) : (
         <div className="topics-grid">
           {topics.map((topic) => (
@@ -50,11 +58,12 @@ function AllTopicsPage() {
               to={`/topics/${topic.slug}`}
               key={topic.slug}
               className="topic-card"
+              aria-label={`View articles about ${topic.slug}`}
             >
               <div className="topic-image-wrapper">
                 <img
                   src={topic.img_url || topicPlaceholderImage}
-                  alt={topic.slug}
+                  alt={`Image representing ${topic.slug}`}
                   className="topic-image"
                 />
               </div>

@@ -49,19 +49,29 @@ function ArticlesByTopic() {
   };
 
   return (
-    <section className="topic-articles-container">
+    <section
+      className="topic-articles-container"
+      aria-labelledby="topic-articles-heading"
+    >
       <h1 className="header-title">Articles about {slug}</h1>
-      {error && <p className="error-message">{error}</p>}
-      <Suspense fallback={<p>Loading sort options...</p>}>
+
+      {error && (
+        <p className="error-message" role="alert">
+          {error}
+        </p>
+      )}
+
+      <Suspense fallback={<p role="status">Loading sort options...</p>}>
         <SortByBox
           onSortChange={handleSortChange}
           onOrderChange={handleOrderChange}
         />
       </Suspense>
+
       {articles.length === 0 ? (
         <p>No articles found.</p>
       ) : (
-        <div className="articles-list">
+        <section className="articles-list" role="list">
           {articles.length > 0 ? (
             articles.map((article) => (
               <ArticleCard key={article.article_id} article={article} />
@@ -69,7 +79,7 @@ function ArticlesByTopic() {
           ) : (
             <p>No articles found for this topic.</p>
           )}
-        </div>
+        </section>
       )}
     </section>
   );

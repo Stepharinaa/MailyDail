@@ -58,6 +58,10 @@ h1 {
   gap: 16px;
 }
 
+.header-title {
+  margin-top: 10px;
+}
+
 .all-articles-section {
   display: flex;
   flex-direction: column;
@@ -632,12 +636,6 @@ h1 {
 
 .welcome-message p {
   font-size: 15px;
-}
-
-.articles-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
 }
 
 .filters-container {
