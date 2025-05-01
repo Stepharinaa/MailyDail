@@ -29,11 +29,10 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.5em 1em;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin-bottom: 10px;
 }
 
 button:hover {

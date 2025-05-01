@@ -533,7 +533,6 @@ h1 {
 
 .vote-button {
   font-size: 16px;
-  padding: 8px;
   cursor: pointer;
   background-color: var(--colour-primary);
   border: none;
@@ -566,6 +565,7 @@ h1 {
   justify-content: center;
   align-items: center;
   color: white;
+  font-size: 16px;
 }
 
 .error-message {
@@ -590,6 +590,7 @@ h1 {
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.2s ease, border-color 0.2s ease;
+  font-size: 14px;
 }
 
 .delete-button:hover {
@@ -817,7 +818,7 @@ h1 {
 }
 
 .comment-vote-button {
-  padding: 8px;
+  padding: 8px 15px;
   cursor: pointer;
   background-color: var(--colour-primary);
   border: none;
