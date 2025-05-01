@@ -565,6 +565,7 @@ h1 {
   justify-content: center;
   align-items: center;
   color: white;
+  font-size: 16px;
 }
 
 .error-message {
@@ -816,7 +817,7 @@ h1 {
 }
 
 .comment-vote-button {
-  padding: 8px;
+  padding: 8px 15px;
   cursor: pointer;
   background-color: var(--colour-primary);
   border: none;
