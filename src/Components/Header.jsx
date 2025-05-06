@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import lightModeLogo from "../assets/light-mailydail.png";
-import darkModeLogo from "../assets/dark-mailydail.png";
+import darkModeLogo from "../assets/dark-mailydail.webp";
 import ThemeToggle from "./ThemeToggle";
 
 function Header({ darkMode, setDarkMode }) {

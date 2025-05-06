@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import articlePlaceHolderImage from "../assets/article-placeholder-image.png";
+import articlePlaceHolderImage from "../assets/article-placeholder-image.webp";
 import timeAgo from "../utils/formatTimeToNow";
 
 function ArticleCard({ article }) {

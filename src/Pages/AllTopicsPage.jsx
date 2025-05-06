@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { fetchTopics } from "../utils/api";
-import topicPlaceholderImage from "../assets/topic-placeholder-image.jpg";
+import topicPlaceholderImage from "../assets/topic-placeholder-image.webp";
 import LoadingAnimation from "../Components/LoadingAnimation";
 import { useNavigate } from "react-router-dom";
 
