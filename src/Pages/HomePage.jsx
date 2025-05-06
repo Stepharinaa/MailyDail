@@ -32,16 +32,34 @@ function HomePage() {
   if (error) return <p className="error-message">{error}</p>;
 
   return (
-    <main>
+    <main role="main" aria-labelledby="main-heading">
       <WelcomeMessage />
-      <section className="articles-section">
-        <h1 className="header-title">Our most popular articles 👀</h1>
-        {articles.length === 0 ? (
-          <p>No articles found.</p>
-        ) : (
-          <ArticleList articles={articles} />
-        )}
-      </section>
+
+      {isLoading && (
+        <div aria-live="polite" aria-busy="true">
+          <LoadingAnimation />
+          <span className="sr-only">Loading popular articles...</span>
+        </div>
+      )}
+
+      {error && (
+        <p className="error-message" role="alert" aria-live="assertive">
+          {error}
+        </p>
+      )}
+
+      {!isLoading && !error && (
+        <section className="articles-section" aria-labelledby="popular-articles-heading">
+          <h1 id="popular-articles-heading" className="header-title">
+            Our Most Popular Articles 👀
+          </h1>
+          {articles.length === 0 ? (
+            <p>No articles found.</p>
+          ) : (
+            <ArticleList articles={articles} />
+          )}
+        </section>
+      )}
     </main>
   );
 }
