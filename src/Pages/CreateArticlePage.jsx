@@ -125,11 +125,12 @@ function CreateArticlePage() {
             </select>
           </label>
           <small id="topic-desc">Pick the topic that best matches your article.</small>
-          
+
           <input
             id="create-article-button"
             type="submit"
             value="Submit Article"
+            aria-label="Submit your article"
           />
         </form>
       )}
