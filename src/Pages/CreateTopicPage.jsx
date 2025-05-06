@@ -40,12 +40,23 @@ function CreateTopicPage() {
   return (
     <div className="create-topic-container">
       <h1>📝 Create a New Topic</h1>
-      <form onSubmit={handleSubmit} className="create-topic-form">
+      <form onSubmit={handleSubmit} className="create-topic-form" aria-describedby="form-desc">
+      <p id="form-desc" className="sr-only">
+        All fields are required to create a topic.
+        </p>
+
         {success && (
-          <p className="success-message">
+          <p className="success-message" aria-live="polite">
             Topic successfully created! Redirecting...
           </p>
         )}
+        
+        {error && (
+          <p className="error-message" aria-live="assertive">
+            {error}
+          </p>
+        )}
+
         <label htmlFor="slug">
           Enter Topic Name:
           <input
@@ -54,8 +65,12 @@ function CreateTopicPage() {
             name="slug"
             value={inputs.slug || ""}
             onChange={handleChange}
+            aria-required="true"
+            aria-describedby="slug-desc"
           />
         </label>
+        <small id="slug-desc">Choose a short, lowercase topic identifier.</small>
+
         <label htmlFor="description">
           Enter Topic Description:
           <input
@@ -64,10 +79,17 @@ function CreateTopicPage() {
             name="description"
             value={inputs.description || ""}
             onChange={handleChange}
+            aria-required="true"
+            aria-describedby="description-desc"
           />
         </label>
-        {error && <p className="error-message">{error}</p>}
-        <input type="submit" />
+        <small id="description-desc">Write a short description explaining the topic.</small>
+
+        <input 
+        type="submit"
+        value="Create Topic"
+        aria-label="Create a new topic" />
+
       </form>
     </div>
   );
