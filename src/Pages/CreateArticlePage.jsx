@@ -65,12 +65,19 @@ function CreateArticlePage() {
       {isLoading ? (
         <p>Loading topics...</p>
       ) : (
-        <form onSubmit={handleSubmit} className="create-article-form">
+        <form onSubmit={handleSubmit} className="create-article-form" aria-describedby="form-desc">
           {confirmationMessage && (
-            <p className="confirmation-message">
+            <p id="form-desc" className="confirmation-message" aria-live="polite">
               Article successfully created! Redirecting...
             </p>
           )}
+
+          {error && (
+            <p className="error-message" aria-live="assertive">
+              {error}
+            </p>
+          )}
+
           <label htmlFor="title">
             Enter Article Title:
             <input
@@ -79,8 +86,11 @@ function CreateArticlePage() {
               name="title"
               value={inputs.title || ""}
               onChange={handleChange}
+              aria-required="true"
+              aria-describedby="title-desc"
             />
           </label>
+          <small id="title-desc">Provide a short, descriptive title for your article.</small>
 
           <label htmlFor="body">
             Enter Content/Body:
@@ -90,8 +100,11 @@ function CreateArticlePage() {
               value={inputs.body || ""}
               onChange={handleChange}
               rows="5"
+              aria-required="true"
+              aria-describedby="body-desc"
             />
           </label>
+          <small id="body-desc">Write the main content of your article.</small>
 
           <label htmlFor="topic">
             Choose a Topic:
@@ -100,6 +113,8 @@ function CreateArticlePage() {
               name="topic"
               value={inputs.topic || ""}
               onChange={handleChange}
+              aria-required="true"
+              aria-describedby="topic-desc"
             >
               <option value="">Select a topic</option>
               {topics.map((topic) => (
@@ -109,8 +124,8 @@ function CreateArticlePage() {
               ))}
             </select>
           </label>
-
-          {error && <p className="error-message">{error}</p>}
+          <small id="topic-desc">Pick the topic that best matches your article.</small>
+          
           <input
             id="create-article-button"
             type="submit"
