@@ -67,7 +67,7 @@ function CreateArticlePage() {
       ) : (
         <form onSubmit={handleSubmit} className="create-article-form" aria-describedby="form-desc">
           {confirmationMessage && (
-            <p id="form-desc" className="confirmation-message" aria-live="polite">
+            <p className="confirmation-message" aria-live="polite">
               Article successfully created! Redirecting...
             </p>
           )}
@@ -126,7 +126,7 @@ function CreateArticlePage() {
           </label>
 
           <input
-            id="create-article-button"
+            className="submit-button"
             type="submit"
             value="Submit Article"
             aria-label="Submit your article"

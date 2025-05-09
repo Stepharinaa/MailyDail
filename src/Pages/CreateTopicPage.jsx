@@ -67,9 +67,9 @@ function CreateTopicPage() {
             onChange={handleChange}
             aria-required="true"
             aria-describedby="slug-desc"
+            placeholder="Choose a short, lowercase topic identifier."
           />
         </label>
-        <small id="slug-desc">Choose a short, lowercase topic identifier.</small>
 
         <label htmlFor="description">
           Enter Topic Description:
@@ -81,11 +81,12 @@ function CreateTopicPage() {
             onChange={handleChange}
             aria-required="true"
             aria-describedby="description-desc"
+            placeholder="Write a short description explaining the topic."
           />
         </label>
-        <small id="description-desc">Write a short description explaining the topic.</small>
 
         <input 
+        className="submit-button"
         type="submit"
         value="Create Topic"
         aria-label="Create a new topic" />
