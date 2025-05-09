@@ -1,10 +1,14 @@
-import Lottie from "lottie-react"
+import React, { Suspense, lazy } from "react";
 import loadingAnimation from "../assets/loading-animation.json";
+
+const Lottie = lazy(() => import("lottie-react"));
 
 function LoadingAnimation() {
   return (
     <div className="loading-container">
-      <Lottie animationData={loadingAnimation} loop={true} autoplay={true}/>
+      <Suspense fallback={<div>Loading animation...</div>}>
+        <Lottie animationData={loadingAnimation} loop autoplay />
+      </Suspense>
     </div>
   );
 }
