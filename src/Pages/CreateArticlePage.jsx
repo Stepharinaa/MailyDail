@@ -88,9 +88,9 @@ function CreateArticlePage() {
               onChange={handleChange}
               aria-required="true"
               aria-describedby="title-desc"
+              placeholder="Provide a short, descriptive title for your article."
             />
           </label>
-          <small id="title-desc">Provide a short, descriptive title for your article.</small>
 
           <label htmlFor="body">
             Enter Content/Body:
@@ -102,9 +102,9 @@ function CreateArticlePage() {
               rows="5"
               aria-required="true"
               aria-describedby="body-desc"
+              placeholder="Write the main content of your article."
             />
           </label>
-          <small id="body-desc">Write the main content of your article.</small>
 
           <label htmlFor="topic">
             Choose a Topic:
@@ -124,7 +124,6 @@ function CreateArticlePage() {
               ))}
             </select>
           </label>
-          <small id="topic-desc">Pick the topic that best matches your article.</small>
 
           <input
             id="create-article-button"

@@ -122,6 +122,10 @@ h1 {
   color: #333;
 }
 
+.dark textarea::placeholder, .dark input::placeholder{
+  color: var(--colour-text);
+}
+
 .dark .create-article-form label {
   color: var(--colour-text);
 }
